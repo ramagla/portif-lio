@@ -55,8 +55,15 @@ const Sobre = () => (
         alt="Rafa-Python"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
       />
+      <img
+        alt="Rafa-PowerBi"
+        src="https://cdn.worldvectorlogo.com/logos/power-bi.svg"
+      />
     </Linguagens>
     <RedesSociais>
+      <a href="https://github.com/ramagla" rel="noreferrer">
+        <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+      </a>
       <a href="https://instagram.com/rafael.almeida.33" rel="noreferrer">
         <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
       </a>
