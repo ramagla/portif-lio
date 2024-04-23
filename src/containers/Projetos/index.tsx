@@ -1,4 +1,5 @@
-import Projeto from '../../components/Projeto'
+import { Projeto1, Projeto2 } from '../../components/Projeto'
+
 import Titulo from '../../components/Titulo'
 
 import { Lista } from './styles'
@@ -8,43 +9,10 @@ const Projetos = () => (
     <Titulo fontSize={16}>Projetos Github</Titulo>
     <Lista>
       <li>
-        <Projeto />
+        <Projeto1 />
       </li>
       <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
-      </li>
-      <li>
-        <Projeto />
+        <Projeto2 />
       </li>
     </Lista>
   </section>

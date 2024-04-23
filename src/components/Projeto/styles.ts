@@ -12,6 +12,7 @@ export const LinkBotao = styled.a`
   padding: 8px;
   display: inline-block;
   margin-top: 24px;
+  cursor: pointer;
 `
 export const LinkBotao2 = styled.a`
   color: ${(props) => props.theme.corDeFundo};
@@ -22,4 +23,5 @@ export const LinkBotao2 = styled.a`
   margin-left: 8px;
   display: inline-block;
   margin-top: 24px;
+  cursor: pointer;
 `

@@ -57,7 +57,7 @@ const Sobre = () => (
       />
       <img
         alt="Rafa-PowerBi"
-        src="https://cdn.worldvectorlogo.com/logos/power-bi.svg"
+        src="https://logohistory.net/wp-content/uploads/2023/05/Power-BI-Logo-2013.png"
       />
     </Linguagens>
     <RedesSociais>
