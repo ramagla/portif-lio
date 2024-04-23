@@ -1,27 +1,27 @@
 import { ThemeProvider } from 'styled-components'
-import Projetos from './containers/Projetos'
+import Projects from './containers/Projects'
 import Sidebar from './containers/Sidebar'
-import Sobre from './containers/Sobre'
-import EstiloGlobal, { Container } from './styles'
-import temaLigth from './themes/light'
-import temaDark from './themes/dark'
+import Abaut from './containers/Abaut'
+import GlobalStyle, { Container } from './styles'
+import DarkTheme from './themes/dark'
 import { useState } from 'react'
+import ligthTheme from './themes/light'
 
 function App() {
-  const [estaUsandoTemaDark, setEstaUsandoTemaDark] = useState(false)
+  const [isUsingDarkTheme, setIsUsingDarkTheme] = useState(false)
 
-  function trocaTema() {
-    setEstaUsandoTemaDark(!estaUsandoTemaDark)
+  function changeTheme() {
+    setIsUsingDarkTheme(!isUsingDarkTheme)
   }
 
   return (
-    <ThemeProvider theme={estaUsandoTemaDark ? temaDark : temaLigth}>
-      <EstiloGlobal />
+    <ThemeProvider theme={isUsingDarkTheme ? DarkTheme : ligthTheme}>
+      <GlobalStyle />
       <Container>
-        <Sidebar trocaTema={trocaTema} />
+        <Sidebar changeTheme={changeTheme} />
         <main>
-          <Sobre />
-          <Projetos />
+          <Abaut />
+          <Projects />
         </main>
       </Container>
     </ThemeProvider>

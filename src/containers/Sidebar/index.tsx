@@ -1,25 +1,25 @@
 import Avatar from '../../components/Avatar'
-import Paragrafo from '../../components/Paragrafo'
-import Titulo from '../../components/Titulo'
+import Paragraph from '../../components/Paragraph'
+import Title from '../../components/Title'
 
-import { Descricao, BotaoTema, SidebarContainer } from './styles'
+import { Description, ThemeButton, SidebarContainer } from './styles'
 
 type Props = {
-  trocaTema: () => void
+  changeTheme: () => void
 }
 
 const Sidebar = (props: Props) => (
   <aside>
     <SidebarContainer>
       <Avatar />
-      <Titulo fontSize={20}>Rafael de Almeida</Titulo>
-      <Paragrafo tipo="secundario" fontSize={16}>
+      <Title fontSize={20}>Rafael de Almeida</Title>
+      <Paragraph type="secondary" fontSize={16}>
         ramagla
-      </Paragrafo>
-      <Descricao tipo="principal" fontSize={12}>
+      </Paragraph>
+      <Description type="main" fontSize={12}>
         Engenheiro front-end
-      </Descricao>
-      <BotaoTema onClick={props.trocaTema}>Trocar tema</BotaoTema>
+      </Description>
+      <ThemeButton onClick={props.changeTheme}>Trocar tema</ThemeButton>
     </SidebarContainer>
   </aside>
 )

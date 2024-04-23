@@ -1,17 +1,15 @@
-import Titulo from '../../components/Titulo'
-import Paragrafo from '../../components/Paragrafo'
-import { GithubSecao } from './styles'
-import { Linguagens } from './styles'
-import { RedesSociais } from './styles'
+import Title from '../../components/Title'
+import Paragraph from '../../components/Paragraph'
+import { GithubSection, Languages, SocialMedia } from './styles'
 
-const Sobre = () => (
+const Abaut = () => (
   <section>
-    <Titulo fontSize={16}>Sobre</Titulo>
-    <Paragrafo tipo="secundario">
+    <Title fontSize={16}>Sobre</Title>
+    <Paragraph type="secondary">
       Oiii eu sou o Rafael Almeida, desenvolvedor Full Stack Pyrhon e gestor de
       tecnologia e inovação!
-    </Paragrafo>
-    <GithubSecao>
+    </Paragraph>
+    <GithubSection>
       <img
         height="180em"
         src="https://github-readme-stats.vercel.app/api?username=ramagla&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"
@@ -21,8 +19,8 @@ const Sobre = () => (
         height="180em"
         src="https://github-readme-stats.vercel.app/api/top-langs/?username=ramagla&layout=compact&langs_count=7&theme=dracula"
       />
-    </GithubSecao>
-    <Linguagens>
+    </GithubSection>
+    <Languages>
       <img
         alt="Rafa-Js"
         src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg"
@@ -59,8 +57,8 @@ const Sobre = () => (
         alt="Rafa-PowerBi"
         src="https://logohistory.net/wp-content/uploads/2023/05/Power-BI-Logo-2013.png"
       />
-    </Linguagens>
-    <RedesSociais>
+    </Languages>
+    <SocialMedia>
       <a href="https://github.com/ramagla" rel="noreferrer">
         <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
       </a>
@@ -80,8 +78,8 @@ const Sobre = () => (
       <a href="https://www.linkedin.com/in/dealmeida" rel="noreferrer">
         <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
       </a>
-    </RedesSociais>
+    </SocialMedia>
   </section>
 )
 
-export default Sobre
+export default Abaut

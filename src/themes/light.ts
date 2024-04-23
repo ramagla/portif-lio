@@ -1,10 +1,10 @@
-const temaLigth = {
-  corPrincipal: '#282a35',
-  corSecundaria: '#949494',
-  corDeFundo: '#fff',
-  corDeFundoBotao: '#4476bf',
-  corDeFundoBotao2: '#000',
-  corDaBorda: '#c1c1c1'
+const ligthTheme = {
+  mainColor: '#282a35',
+  secondaryColor: '#949494',
+  backgroundColor: '#fff',
+  buttonBackgroundColor: '#4476bf',
+  buttonBackgroundColor2: '#000',
+  edgeColor: '#c1c1c1'
 }
 
-export default temaLigth
+export default ligthTheme

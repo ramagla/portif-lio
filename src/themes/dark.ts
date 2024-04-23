@@ -1,19 +1,19 @@
-const temaDark = {
-  corPrincipal: '#fff',
-  corSecundaria: '#eee',
-  corDeFundo: '#282a35',
-  corDeFundoBotao: '#fff',
-  corDeFundoBotao2: '#fff',
-  corDaBorda: '#c1c1c1'
+const DarkTheme = {
+  mainColor: '#fff',
+  secondaryColor: '#000',
+  backgroundColor: '#282a35',
+  buttonBackgroundColor: '#fff',
+  buttonBackgroundColor2: '#fff',
+  edgeColor: '#c1c1c1'
 }
 
-export default temaDark
+export default DarkTheme
 
 export type Theme = {
-  corPrincipal: string
-  corSecundaria: string
-  corDeFundo: string
-  corDeFundoBotao: string
-  corDeFundoBotao2: string
-  corDaBorda: string
+  mainColor: string
+  secondaryColor: string
+  backgroundColor: string
+  buttonBackgroundColor: string
+  buttonBackgroundColor2: string
+  edgeColor: string
 }

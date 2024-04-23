@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const GithubSecao = styled.div`
+export const GithubSection = styled.div`
   margin-top: 32px;
   margin-bottom: 64px;
 
@@ -14,7 +14,7 @@ export const GithubSecao = styled.div`
   }
 `
 
-export const Linguagens = styled.div`
+export const Languages = styled.div`
   display: block;
   img {
     align-items: center;
@@ -23,7 +23,7 @@ export const Linguagens = styled.div`
   }
 `
 
-export const RedesSociais = styled.div`
+export const SocialMedia = styled.div`
   display: block;
   img {
     padding-right: 2px;
