@@ -54,6 +54,10 @@ const Abaut = () => (
         src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
       />
       <img
+        alt="Rafa-Python"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"
+      />
+      <img
         alt="Rafa-PowerBi"
         src="https://logohistory.net/wp-content/uploads/2023/05/Power-BI-Logo-2013.png"
       />
