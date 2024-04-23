@@ -59,10 +59,14 @@ const Abaut = () => (
       />
     </Languages>
     <SocialMedia>
-      <a href="https://github.com/ramagla" rel="noreferrer">
+      <a href="https://github.com/ramagla" rel="noreferrer" target="blank">
         <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
       </a>
-      <a href="https://instagram.com/rafael.almeida.33" rel="noreferrer">
+      <a
+        href="https://instagram.com/rafael.almeida.33"
+        rel="noreferrer"
+        target="blank"
+      >
         <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
       </a>
       <a
@@ -72,10 +76,14 @@ const Abaut = () => (
       >
         <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
       </a>
-      <a href="mailto:ramagla2@gmail.com">
+      <a href="mailto:ramagla2@gmail.com" target="blank">
         <img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" />
       </a>
-      <a href="https://www.linkedin.com/in/dealmeida" rel="noreferrer">
+      <a
+        href="https://www.linkedin.com/in/dealmeida"
+        rel="noreferrer"
+        target="blank"
+      >
         <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
       </a>
     </SocialMedia>
