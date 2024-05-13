@@ -36,4 +36,22 @@ export const Project2 = () => (
     </ButtonLink2>
   </Card>
 )
+
+export const Project3 = () => (
+  <Card>
+    <Title>Projeto teste</Title>
+    <Paragraph type="secondary">
+      Contador de eventos feito com HTML, SCSS e JS
+    </Paragraph>
+    <ButtonLink
+      href="https://app.powerbi.com/view?r=eyJrIjoiNTE2Zjk2MWUtMTljNS00NTQ5LWJiZDQtZGE3ZmE4NmFjNjYxIiwidCI6IjIxY2MyMTdmLWYzYzktNDQ2OC04YTFiLTJiNzIzODJkYTVhMSJ9"
+      target="blank"
+    >
+      Dashboard
+    </ButtonLink>
+    {/* <ButtonLink2 href="https://contador-eventos.vercel.app/" target="blank">
+      Vercel
+    </ButtonLink2> */}
+  </Card>
+)
 export default Project1
