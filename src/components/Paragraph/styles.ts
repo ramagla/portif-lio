@@ -6,4 +6,5 @@ export const P = styled.p<Props>`
   color: ${(props) =>
     props.type === 'main' ? props.theme.mainColor : props.theme.mainColor};
   line-height: 22px;
+  text-align: center;
 `

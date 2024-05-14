@@ -1,7 +1,16 @@
-import { Card, ButtonLink, ButtonLink2, ImageWrapper } from './styles'
+import {
+  Card,
+  ButtonLink,
+  ButtonLink2,
+  ImageWrapper,
+  Languages,
+  ButtonPbi
+} from './styles'
 import Paragraph from '../Paragraph'
 import Title from '../Title'
 import efood from '../../assets/images/efood.png'
+import egames from '../../assets/images/egames.png'
+import satisfacao from '../../assets/images/satisfacao.png'
 
 //Projetos github
 
@@ -17,6 +26,28 @@ export const Project1 = () => (
       eficiente, enquanto o TypeScript ofereceu um sistema de tipos robusto que
       melhorou a qualidade do código e facilitou a manutenção.
     </Paragraph>
+    <Languages>
+      <img
+        alt="Rafa-Ts"
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg"
+      />
+      <img
+        alt="Rafa-React"
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+      />
+      <img
+        alt="Rafa-HTML"
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+      />
+      <img
+        alt="Rafa-CSS"
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+      />
+      <img
+        alt="Rafa-Python"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"
+      />
+    </Languages>
     <ButtonLink
       title="clique aqui para ir para o projeto no github"
       href="https://github.com/ramagla/eFood"
@@ -36,7 +67,7 @@ export const Project1 = () => (
 export const Project2 = () => (
   <Card>
     <ImageWrapper>
-      <img src={efood} alt="" />
+      <img src={egames} alt="" />
     </ImageWrapper>
     <Title>Projeto site de Games</Title>
     <Paragraph type="secondary">
@@ -46,6 +77,28 @@ export const Project2 = () => (
       experiência de usuário fluida e dinâmica, além de garantir um código mais
       seguro e fácil de manter.
     </Paragraph>
+    <Languages>
+      <img
+        alt="Rafa-Ts"
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg"
+      />
+      <img
+        alt="Rafa-React"
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+      />
+      <img
+        alt="Rafa-HTML"
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+      />
+      <img
+        alt="Rafa-CSS"
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+      />
+      <img
+        alt="Rafa-Python"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"
+      />
+    </Languages>
     <ButtonLink
       title="clique aqui para ir para o projeto no github"
       href="https://github.com/ramagla/eplay"
@@ -68,21 +121,17 @@ export const Project2 = () => (
 export const Project3 = () => (
   <Card>
     <ImageWrapper>
-      <img src={efood} alt="" />
+      <img src={satisfacao} alt="Projeto de Pesquisa de Satisfação" />
     </ImageWrapper>
-    <Title>Projeto teste</Title>
-    <Paragraph type="secondary">
-      Contador de eventos feito com HTML, SCSS e JS
-    </Paragraph>
-    <ButtonLink
-      href="https://app.powerbi.com/view?r=eyJrIjoiNTE2Zjk2MWUtMTljNS00NTQ5LWJiZDQtZGE3ZmE4NmFjNjYxIiwidCI6IjIxY2MyMTdmLWYzYzktNDQ2OC04YTFiLTJiNzIzODJkYTVhMSJ9"
+    <Title>Projeto de pesquisa de Satisfação dos Colaboradores</Title>
+    <Paragraph type="secondary">Recursos Humanos</Paragraph>
+    <ButtonPbi
+      href="https://app.powerbi.com/view?r=eyJrIjoiZDdhMjhlYzItYmZjNi00MTgzLWE2ODQtMzExZGQ2MzUxMjRlIiwidCI6IjIxY2MyMTdmLWYzYzktNDQ2OC04YTFiLTJiNzIzODJkYTVhMSJ9"
       target="blank"
+      title="clique aqui para ir para acessar o dashboard"
     >
       Dashboard
-    </ButtonLink>
-    {/* <ButtonLink2 href="https://contador-eventos.vercel.app/" target="blank">
-      Vercel
-    </ButtonLink2> */}
+    </ButtonPbi>
   </Card>
 )
 export default Project1
