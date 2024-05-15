@@ -67,7 +67,7 @@ export const Button = styled.a`
   background-color: ${(props) => props.theme.mainColor};
   cursor: pointer;
   margin: 10px; // Adicione margem para espaçamento
-  width: 180px; // Largura fixa para ambos os botões
+  width: auto; // Largura fixa para ambos os botões
   height: auto; // Altura fixa para ambos os botões
   display: block; // Faça os botões ocuparem sua própria linha
   text-align: center; // Centralize o texto dentro do botão
@@ -80,5 +80,7 @@ export const Button = styled.a`
   @media (max-width: 768px) {
     margin-left: auto;
     margin-right: auto;
+    width: 140px;
+    text-align: center;
   }
 `
