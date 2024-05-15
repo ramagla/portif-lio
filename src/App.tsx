@@ -8,7 +8,7 @@ import { useState } from 'react'
 import ligthTheme from './themes/light'
 
 function App() {
-  const [isUsingDarkTheme, setIsUsingDarkTheme] = useState(false)
+  const [isUsingDarkTheme, setIsUsingDarkTheme] = useState(true)
 
   function changeTheme() {
     setIsUsingDarkTheme(!isUsingDarkTheme)

@@ -1,7 +1,8 @@
+import { ReactNode } from 'react'
 import { Title as TitleStyle } from './styles'
 
 export type Props = {
-  children: string
+  children: ReactNode
   fontSize?: number
 }
 const Title = (props: Props) => (

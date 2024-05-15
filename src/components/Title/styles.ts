@@ -7,4 +7,8 @@ export const Title = styled.h3<Props>`
   font-weight: bold;
   margin-bottom: 16px;
   text-align: center;
+
+  span {
+    font-size: 22px;
+  }
 `

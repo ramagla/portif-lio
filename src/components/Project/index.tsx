@@ -4,7 +4,8 @@ import {
   ButtonLink2,
   ImageWrapper,
   Languages,
-  ButtonPbi
+  ButtonPbi,
+  ButtonContainer
 } from './styles'
 import Paragraph from '../Paragraph'
 import Title from '../Title'
@@ -20,7 +21,9 @@ export const Git1 = () => (
     <ImageWrapper>
       <img src={efood} alt="" />
     </ImageWrapper>
-    <Title>Projeto site de Delivery</Title>
+    <Title>
+      <span>Projeto site de Delivery</span>
+    </Title>
     <Paragraph type="secondary">
       Para este projeto, optei por utilizar React juntamente com TypeScript. A
       escolha do React permitiu-me criar uma interface de usuário interativa e
@@ -49,20 +52,22 @@ export const Git1 = () => (
         src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"
       />
     </Languages>
-    <ButtonLink
-      title="clique aqui para ir para o projeto no github"
-      href="https://github.com/ramagla/eFood"
-      target="blank"
-    >
-      Github
-    </ButtonLink>
-    <ButtonLink2
-      title="clique aqui para ir para o projeto na vercel"
-      href="https://e-food-inky.vercel.app/"
-      target="blank"
-    >
-      Vercel
-    </ButtonLink2>
+    <ButtonContainer>
+      <ButtonLink
+        title="clique aqui para ir para o projeto no github"
+        href="https://github.com/ramagla/eFood"
+        target="blank"
+      >
+        Github
+      </ButtonLink>
+      <ButtonLink2
+        title="clique aqui para ir para o projeto na vercel"
+        href="https://e-food-inky.vercel.app/"
+        target="blank"
+      >
+        Vercel
+      </ButtonLink2>
+    </ButtonContainer>
   </Card>
 )
 export const Git2 = () => (
@@ -70,7 +75,9 @@ export const Git2 = () => (
     <ImageWrapper>
       <img src={egames} alt="" />
     </ImageWrapper>
-    <Title>Projeto site de Games</Title>
+    <Title>
+      <span>Projeto site de Games</span>
+    </Title>
     <Paragraph type="secondary">
       Neste projeto, desenvolvi uma loja virtual de games, implementada com o
       uso de React e TypeScript. A combinação dessas tecnologias permitiu a
@@ -78,6 +85,7 @@ export const Git2 = () => (
       experiência de usuário fluida e dinâmica, além de garantir um código mais
       seguro e fácil de manter.
     </Paragraph>
+
     <Languages>
       <img
         alt="Rafa-Ts"
@@ -100,20 +108,22 @@ export const Git2 = () => (
         src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"
       />
     </Languages>
-    <ButtonLink
-      title="clique aqui para ir para o projeto no github"
-      href="https://github.com/ramagla/eplay"
-      target="blank"
-    >
-      Github
-    </ButtonLink>
-    <ButtonLink2
-      title="clique aqui para ir para o projeto na vercel"
-      href="https://eplay-khaki-nine.vercel.app/"
-      target="blank"
-    >
-      Vercel
-    </ButtonLink2>
+    <ButtonContainer>
+      <ButtonLink
+        title="clique aqui para ir para o projeto no github"
+        href="https://github.com/ramagla/eplay"
+        target="blank"
+      >
+        Github
+      </ButtonLink>
+      <ButtonLink2
+        title="clique aqui para ir para o projeto na vercel"
+        href="https://eplay-khaki-nine.vercel.app/"
+        target="blank"
+      >
+        Vercel
+      </ButtonLink2>
+    </ButtonContainer>
   </Card>
 )
 
@@ -124,7 +134,9 @@ export const Pbi1 = () => (
     <ImageWrapper>
       <img src={satisfacao} alt="Projeto de Pesquisa de Satisfação" />
     </ImageWrapper>
-    <Title>Projeto de pesquisa de Satisfação dos Colaboradores</Title>
+    <Title>
+      <span>Projeto de pesquisa de Satisfação dos Colaboradores</span>
+    </Title>
     <Paragraph type="secondary">Recursos Humanos</Paragraph>
     <ButtonPbi
       href="https://app.powerbi.com/view?r=eyJrIjoiZDdhMjhlYzItYmZjNi00MTgzLWE2ODQtMzExZGQ2MzUxMjRlIiwidCI6IjIxY2MyMTdmLWYzYzktNDQ2OC04YTFiLTJiNzIzODJkYTVhMSJ9"
@@ -144,7 +156,9 @@ export const Pbi2 = () => (
         alt="Projeto de Pesquisa de Acompanhamento de vendas"
       />
     </ImageWrapper>
-    <Title>Projeto de Acompanhamento de vendas: Franquia de lojas</Title>
+    <Title>
+      <span>Projeto de Acompanhamento de vendas: Franquia de lojas</span>
+    </Title>
     <Paragraph type="secondary">Setor Financeiro</Paragraph>
     <ButtonPbi
       href="https://app.powerbi.com/view?r=eyJrIjoiY2EyNzAwY2YtMWUzMy00ODY5LTg1MjEtYWM2NWRmYzRkY2U2IiwidCI6IjIxY2MyMTdmLWYzYzktNDQ2OC04YTFiLTJiNzIzODJkYTVhMSJ9"

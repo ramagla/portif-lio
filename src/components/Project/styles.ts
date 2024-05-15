@@ -9,6 +9,12 @@ export const Card = styled.div`
   height: 100%;
 `
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`
+
 export const ButtonLink = styled.a`
   color: white;
   font-size: 14px;
@@ -56,9 +62,9 @@ export const ImageWrapper = styled.div`
   }
 `
 export const Languages = styled.div`
-  display: block;
+  display: flex;
   padding-top: 16px;
-
+  justify-content: center;
   img {
     align-items: center;
     height: 30px;
