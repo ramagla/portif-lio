@@ -29,6 +29,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 128px auto;
   column-gap: 56px;
+  padding: 0;
 
   @media (max-width: 768px) {
     max-width: 80%;

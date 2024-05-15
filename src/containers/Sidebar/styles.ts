@@ -14,6 +14,10 @@ export const ThemeButton = styled.button`
   background-color: ${(props) => props.theme.mainColor};
   cursor: pointer;
   margin-left: 46px;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 `
 
 export const SidebarContainer = styled.div`
@@ -24,6 +28,11 @@ export const SidebarContainer = styled.div`
 
   @media (max-width: 768px) {
     margin-bottom: 40px;
+    margin-top: 40px;
+    text-align: center;
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
     text-align: center;
   }
 `
