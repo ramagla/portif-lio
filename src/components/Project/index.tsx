@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Card,
   ButtonLink,
@@ -5,7 +6,10 @@ import {
   ImageWrapper,
   Languages,
   ButtonPbi,
-  ButtonContainer
+  ButtonContainer,
+  Action,
+  Modal,
+  ModalContent
 } from './styles'
 import Paragraph from '../Paragraph'
 import Title from '../Title'
@@ -13,63 +17,87 @@ import efood from '../../assets/images/efood.png'
 import egames from '../../assets/images/egames.png'
 import satisfacao from '../../assets/images/satisfacao.png'
 import acompanhamento from '../../assets/images/acompanhamento.png'
+import zoom from '../../assets/images/zoom.png'
+import close from '../../assets/images/fechar.png'
 
 //Projetos github
 
-export const Git1 = () => (
-  <Card>
-    <ImageWrapper>
-      <img src={efood} alt="" />
-    </ImageWrapper>
-    <Title>
-      <span>Projeto site de Delivery</span>
-    </Title>
-    <Paragraph type="secondary">
-      Para este projeto, optei por utilizar React juntamente com TypeScript. A
-      escolha do React permitiu-me criar uma interface de usuário interativa e
-      eficiente, enquanto o TypeScript ofereceu um sistema de tipos robusto que
-      melhorou a qualidade do código e facilitou a manutenção.
-    </Paragraph>
-    <Languages>
-      <img
-        alt="Rafa-Ts"
-        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg"
-      />
-      <img
-        alt="Rafa-React"
-        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
-      />
-      <img
-        alt="Rafa-HTML"
-        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
-      />
-      <img
-        alt="Rafa-CSS"
-        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
-      />
-      <img
-        alt="Rafa-Python"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"
-      />
-    </Languages>
-    <ButtonContainer>
-      <ButtonLink
-        title="clique aqui para ir para o projeto no github"
-        href="https://github.com/ramagla/eFood"
-        target="blank"
-      >
-        Github
-      </ButtonLink>
-      <ButtonLink2
-        title="clique aqui para ir para o projeto na vercel"
-        href="https://e-food-inky.vercel.app/"
-        target="blank"
-      >
-        Vercel
-      </ButtonLink2>
-    </ButtonContainer>
-  </Card>
-)
+export const Git1 = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  return (
+    <Card>
+      <ImageWrapper>
+        <img src={efood} alt="" />
+        <Action onClick={() => setModalIsOpen(true)}>
+          <img src={zoom} alt="Clique para maximizar a imagem" />
+        </Action>
+      </ImageWrapper>
+      <Modal className={modalIsOpen ? 'visible' : ''}>
+        <ModalContent className="container">
+          <header>
+            <h4>Projeto site de Delivery</h4>
+            <img
+              src={close}
+              alt="Clique aqui para fechar"
+              onClick={() => setModalIsOpen(false)}
+            />
+          </header>
+          <img src={efood} />
+        </ModalContent>
+        <div className="overlay" onClick={() => setModalIsOpen(false)}></div>
+      </Modal>
+      <Title>
+        <span>Projeto site de Delivery</span>
+      </Title>
+      <Paragraph type="secondary">
+        Para este projeto, optei por utilizar React juntamente com TypeScript. A
+        escolha do React permitiu-me criar uma interface de usuário interativa e
+        eficiente, enquanto o TypeScript ofereceu um sistema de tipos robusto
+        que melhorou a qualidade do código e facilitou a manutenção.
+      </Paragraph>
+      <Languages>
+        <img
+          alt="Rafa-Ts"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg"
+        />
+        <img
+          alt="Rafa-React"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        />
+        <img
+          alt="Rafa-HTML"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+        />
+        <img
+          alt="Rafa-CSS"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+        />
+        <img
+          alt="Rafa-Python"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"
+        />
+      </Languages>
+      <ButtonContainer>
+        <ButtonLink
+          title="clique aqui para ir para o projeto no github"
+          href="https://github.com/ramagla/eFood"
+          target="blank"
+        >
+          Github
+        </ButtonLink>
+        <ButtonLink2
+          title="clique aqui para ir para o projeto na vercel"
+          href="https://e-food-inky.vercel.app/"
+          target="blank"
+        >
+          Vercel
+        </ButtonLink2>
+      </ButtonContainer>
+    </Card>
+  )
+}
+
 export const Git2 = () => (
   <Card>
     <ImageWrapper>
