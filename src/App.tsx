@@ -6,6 +6,7 @@ import GlobalStyle, { Container } from './styles'
 import DarkTheme from './themes/dark'
 import { useState } from 'react'
 import ligthTheme from './themes/light'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   const [isUsingDarkTheme, setIsUsingDarkTheme] = useState(true)
@@ -18,6 +19,7 @@ function App() {
     <ThemeProvider theme={isUsingDarkTheme ? DarkTheme : ligthTheme}>
       <GlobalStyle />
       <Container>
+        <Analytics />
         <Sidebar changeTheme={changeTheme} />
         <main>
           <Abaut />
