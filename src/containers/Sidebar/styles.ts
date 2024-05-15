@@ -13,6 +13,7 @@ export const ThemeButton = styled.button`
   font-weight: bold;
   background-color: ${(props) => props.theme.mainColor};
   cursor: pointer;
+  margin-left: 46px;
 `
 
 export const SidebarContainer = styled.div`

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 export const Card = styled.div`
   border: 1px solid ${(props) => props.theme.edgeColor};
   padding: 16px;
-  border-radius: 10px; /* Adicione bordas arredondadas */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adicione sombra */
-  background-color: #f0f0f0; /* Defina uma cor de fundo */
-  margin: 10px; /* Ajuste as margens conforme necessário */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: ${(props) => props.theme.secondaryColor};
+  height: 100%;
 `
 
 export const ButtonLink = styled.a`
@@ -20,6 +20,12 @@ export const ButtonLink = styled.a`
   cursor: pointer;
   margin-top: 24px;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+    color: #e0e0e0;
+  }
 `
 export const ButtonLink2 = styled.a`
   color: ${(props) => props.theme.backgroundColor};
@@ -32,6 +38,11 @@ export const ButtonLink2 = styled.a`
   margin-top: 24px;
   cursor: pointer;
   font-weight: bold;
+
+  &:hover {
+    background-color: ${(props) => props.theme.buttonHoverBackgroundColor2};
+    color: ${(props) => props.theme.hoverTextColor};
+  }
 `
 export const ImageWrapper = styled.div`
   position: relative;

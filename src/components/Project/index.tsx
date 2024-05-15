@@ -11,10 +11,11 @@ import Title from '../Title'
 import efood from '../../assets/images/efood.png'
 import egames from '../../assets/images/egames.png'
 import satisfacao from '../../assets/images/satisfacao.png'
+import acompanhamento from '../../assets/images/acompanhamento.png'
 
 //Projetos github
 
-export const Project1 = () => (
+export const Git1 = () => (
   <Card>
     <ImageWrapper>
       <img src={efood} alt="" />
@@ -64,7 +65,7 @@ export const Project1 = () => (
     </ButtonLink2>
   </Card>
 )
-export const Project2 = () => (
+export const Git2 = () => (
   <Card>
     <ImageWrapper>
       <img src={egames} alt="" />
@@ -118,7 +119,7 @@ export const Project2 = () => (
 
 //Projetos powerbi
 
-export const Project3 = () => (
+export const Pbi1 = () => (
   <Card>
     <ImageWrapper>
       <img src={satisfacao} alt="Projeto de Pesquisa de Satisfação" />
@@ -134,4 +135,24 @@ export const Project3 = () => (
     </ButtonPbi>
   </Card>
 )
-export default Project1
+
+export const Pbi2 = () => (
+  <Card>
+    <ImageWrapper>
+      <img
+        src={acompanhamento}
+        alt="Projeto de Pesquisa de Acompanhamento de vendas"
+      />
+    </ImageWrapper>
+    <Title>Projeto de Acompanhamento de vendas: Franquia de lojas</Title>
+    <Paragraph type="secondary">Setor Financeiro</Paragraph>
+    <ButtonPbi
+      href="https://app.powerbi.com/view?r=eyJrIjoiY2EyNzAwY2YtMWUzMy00ODY5LTg1MjEtYWM2NWRmYzRkY2U2IiwidCI6IjIxY2MyMTdmLWYzYzktNDQ2OC04YTFiLTJiNzIzODJkYTVhMSJ9"
+      target="blank"
+      title="clique aqui para ir para acessar o dashboard"
+    >
+      Dashboard
+    </ButtonPbi>
+  </Card>
+)
+export default Git1

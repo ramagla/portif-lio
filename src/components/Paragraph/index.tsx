@@ -1,7 +1,8 @@
+import { ReactNode } from 'react'
 import { P } from './styles'
 
 export type Props = {
-  children: string
+  children: ReactNode
   type?: 'main' | 'secondary'
   fontSize?: number
 }

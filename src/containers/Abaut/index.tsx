@@ -1,14 +1,19 @@
-import Title from '../../components/Title'
-import Paragraph from '../../components/Paragraph'
 import { GithubSection, Languages, SocialMedia } from './styles'
+import { P } from '../../components/Paragraph/styles'
 
 const Abaut = () => (
   <section>
-    <Title fontSize={16}>Sobre</Title>
-    <Paragraph type="secondary">
-      Oiii eu sou o Rafael Almeida, desenvolvedor Full Stack Pyrhon e gestor de
-      tecnologia e inovação!
-    </Paragraph>
+    <P>
+      <div>
+        <h2>
+          Desenvolvedor Full Stack Python | Gestor de Tecnologia e Inovação
+        </h2>{' '}
+        <br /> Olá! Sou o Rafael Almeida, um apaixonado por tecnologia e
+        inovação. Com experiência como desenvolvedor Full Stack em Python, estou
+        sempre em busca de soluções criativas e eficientes para os desafios
+        tecnológicos. Vamos construir algo incrível juntos!
+      </div>
+    </P>
     <GithubSection>
       <img
         height="180em"

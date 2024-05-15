@@ -16,7 +16,7 @@ const Sidebar = (props: Props) => (
       <Paragraph type="secondary" fontSize={16}>
         ramagla
       </Paragraph>
-      <Description type="main" fontSize={12}>
+      <Description type="main" fontSize={16}>
         Engenheiro front-end
       </Description>
       <ThemeButton onClick={props.changeTheme}>Trocar tema</ThemeButton>

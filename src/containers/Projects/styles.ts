@@ -7,6 +7,7 @@ export const List = styled.ul`
   grid-template-columns: 1fr 1fr;
   column-gap: 36px;
   row-gap: 40px;
+  margin-left: 64px;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -18,6 +19,7 @@ export const List = styled.ul`
 export const ButtonContainer = styled.div`
   display: flex;
   margin-bottom: 16px;
+  margin-left: 64px;
 `
 
 export const Button = styled.button<{ active: boolean }>`
