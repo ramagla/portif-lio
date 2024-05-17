@@ -8,7 +8,7 @@ export const Card = styled.div<{ expanded: boolean }>`
   background-color: ${(props) => props.theme.secondaryColor};
   overflow: hidden;
   height: ${(props) =>
-    props.expanded ? 'auto' : '540px'}; // Usamos a propriedade diretamente aqui
+    props.expanded ? 'auto' : '500px'}; // Usamos a propriedade diretamente aqui
   transition: height 0.5s ease;
 
   ${(props) =>

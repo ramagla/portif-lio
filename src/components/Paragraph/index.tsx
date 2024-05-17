@@ -5,14 +5,14 @@ export type ParagraphProps = {
   children: React.ReactNode
   type?: 'main' | 'secondary'
   fontSize?: number
-  toggleExpansion?: () => void // Adicione essa propriedade aos tipos
+  toggleExpansion?: () => void
 }
 
 const getTextLength = (children: ReactNode): number => {
   if (typeof children === 'string') {
     return children.length
   }
-  // Adicione mais lógica aqui se você quiser lidar com outros tipos de children
+
   return 0
 }
 
@@ -30,7 +30,7 @@ const Paragraph = ({
   return (
     <P fontSize={fontSize} type={type} onClick={toggleExpansion}>
       {isTruncated
-        ? typeof children === 'string'
+        ? typeof children === 'string' && textLength > 300
           ? children.substring(0, 300) + '...'
           : children
         : children}

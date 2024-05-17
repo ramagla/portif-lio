@@ -22,6 +22,8 @@ import zoom from '../../assets/images/zoom.png'
 import close from '../../assets/images/fechar.png'
 import gameshop from '../../assets/images/gameshop.png'
 import galeria from '../../assets/images/galeria.png'
+import restaurante from '../../assets/images/restaurante.png'
+import sorteador from '../../assets/images/sorteador.png'
 
 //Projetos github
 
@@ -331,6 +333,152 @@ export const Git4 = () => {
   )
 }
 
+export const Git5 = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
+  const toggleExpansion = () => {
+    setExpanded(!expanded)
+  }
+
+  return (
+    <Card expanded={expanded}>
+      <ImageWrapper>
+        <img src={restaurante} alt="" />
+        <Action onClick={() => setModalIsOpen(true)}>
+          <img src={zoom} alt="Clique para maximizar a imagem" />
+        </Action>
+      </ImageWrapper>
+      <Modal className={modalIsOpen ? 'visible' : ''}>
+        <ModalContent className="container">
+          <header>
+            <h4>Site Restaurante</h4>
+            <img
+              src={close}
+              alt="Clique aqui para fechar"
+              onClick={() => setModalIsOpen(false)}
+            />
+          </header>
+          <img src={restaurante} />
+        </ModalContent>
+        <div className="overlay" onClick={() => setModalIsOpen(false)}></div>
+      </Modal>
+      <Title>
+        <span>Site Restaurante</span>
+      </Title>
+      <Paragraph type="secondary" toggleExpansion={toggleExpansion}>
+        Este projeto apresenta o desenvolvimento de um website inovador para um
+        restaurante, que explora integralmente as funcionalidades do Bootstrap
+        para criar uma experiência de usuário excepcional e um design
+        responsivo.
+      </Paragraph>
+
+      <Languages>
+        <img
+          alt="Rafa-HTML"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+        />
+        <img
+          alt="Rafa-CSS"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+        />
+        <img
+          alt="Rafa-Jquery"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+        />
+      </Languages>
+      <ButtonContainer>
+        <ButtonLink
+          title="clique aqui para ir para o projeto no github"
+          href="https://github.com/ramagla/bootstrap_restaurante.git"
+          target="blank"
+        >
+          Github
+        </ButtonLink>
+        <ButtonLink2
+          title="clique aqui para ir para o projeto na vercel"
+          href="https://bootstrap-restaurante-lemon.vercel.app/"
+          target="blank"
+        >
+          Vercel
+        </ButtonLink2>
+      </ButtonContainer>
+    </Card>
+  )
+}
+
+export const Git6 = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
+  const toggleExpansion = () => {
+    setExpanded(!expanded)
+  }
+
+  return (
+    <Card expanded={expanded}>
+      <ImageWrapper>
+        <img src={sorteador} alt="" />
+        <Action onClick={() => setModalIsOpen(true)}>
+          <img src={zoom} alt="Clique para maximizar a imagem" />
+        </Action>
+      </ImageWrapper>
+      <Modal className={modalIsOpen ? 'visible' : ''}>
+        <ModalContent className="container">
+          <header>
+            <h4>Site Sorteador</h4>
+            <img
+              src={close}
+              alt="Clique aqui para fechar"
+              onClick={() => setModalIsOpen(false)}
+            />
+          </header>
+          <img src={sorteador} />
+        </ModalContent>
+        <div className="overlay" onClick={() => setModalIsOpen(false)}></div>
+      </Modal>
+      <Title>
+        <span>Site Sorteador</span>
+      </Title>
+      <Paragraph type="secondary" toggleExpansion={toggleExpansion}>
+        Neste projeto, foi empregado o Grunt para automatizar tarefas de
+        desenvolvimento e construir um sistema avançado de sorteio de números
+        aleatórios.
+      </Paragraph>
+
+      <Languages>
+        <img
+          alt="Rafa-HTML"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+        />
+        <img
+          alt="Rafa-CSS"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+        />
+        <img
+          alt="Rafa-Jquery"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grunt/grunt-original-wordmark.svg"
+        />
+      </Languages>
+      <ButtonContainer>
+        <ButtonLink
+          title="clique aqui para ir para o projeto no github"
+          href="https://github.com/ramagla/bootstrap_restaurante.git"
+          target="blank"
+        >
+          Github
+        </ButtonLink>
+        <ButtonLink2
+          title="clique aqui para ir para o projeto na vercel"
+          href="https://bootstrap-restaurante-lemon.vercel.app/"
+          target="blank"
+        >
+          Vercel
+        </ButtonLink2>
+      </ButtonContainer>
+    </Card>
+  )
+}
 //Projetos powerbi
 
 export const Pbi1 = () => {
