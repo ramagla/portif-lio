@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Git1, Git2, Pbi1, Pbi2 } from '../../components/Project'
+import { Git1, Git2, Git3, Git4, Pbi1, Pbi2 } from '../../components/Project'
 import Title from '../../components/Title'
 import { List, ButtonContainer, Button } from './styles'
 
@@ -33,6 +33,12 @@ const Projects = () => {
             </li>
             <li>
               <Git2 />
+            </li>
+            <li>
+              <Git3 />
+            </li>
+            <li>
+              <Git4 />
             </li>
           </>
         )}

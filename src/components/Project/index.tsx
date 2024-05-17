@@ -19,6 +19,8 @@ import satisfacao from '../../assets/images/satisfacao.png'
 import acompanhamento from '../../assets/images/acompanhamento.png'
 import zoom from '../../assets/images/zoom.png'
 import close from '../../assets/images/fechar.png'
+import gameshop from '../../assets/images/gameshop.png'
+import galeria from '../../assets/images/galeria.png'
 
 //Projetos github
 
@@ -166,6 +168,138 @@ export const Git2 = () => {
         <ButtonLink2
           title="clique aqui para ir para o projeto na vercel"
           href="https://eplay-khaki-nine.vercel.app/"
+          target="blank"
+        >
+          Vercel
+        </ButtonLink2>
+      </ButtonContainer>
+    </Card>
+  )
+}
+
+export const Git3 = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  return (
+    <Card>
+      <ImageWrapper>
+        <img src={gameshop} alt="" />
+        <Action onClick={() => setModalIsOpen(true)}>
+          <img src={zoom} alt="Clique para maximizar a imagem" />
+        </Action>
+      </ImageWrapper>
+      <Modal className={modalIsOpen ? 'visible' : ''}>
+        <ModalContent className="container">
+          <header>
+            <h4>Site Games Shop</h4>
+            <img
+              src={close}
+              alt="Clique aqui para fechar"
+              onClick={() => setModalIsOpen(false)}
+            />
+          </header>
+          <img src={gameshop} />
+        </ModalContent>
+        <div className="overlay" onClick={() => setModalIsOpen(false)}></div>
+      </Modal>
+      <Title>
+        <span>Site de Games</span>
+      </Title>
+      <Paragraph type="secondary">
+        Neste projeto, construímos uma estrutura básica utilizando CSS e HTML.
+        Embora a responsividade não tenha sido implementada, o foco foi criar um
+        exemplo didático para facilitar o aprendizado dessas tecnologias
+      </Paragraph>
+
+      <Languages>
+        <img
+          alt="Rafa-HTML"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+        />
+        <img
+          alt="Rafa-CSS"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+        />
+      </Languages>
+      <ButtonContainer>
+        <ButtonLink
+          title="clique aqui para ir para o projeto no github"
+          href="https://github.com/ramagla/site_gamesshop.git"
+          target="blank"
+        >
+          Github
+        </ButtonLink>
+        <ButtonLink2
+          title="clique aqui para ir para o projeto na vercel"
+          href="https://site-gamesshop-red-two.vercel.app/"
+          target="blank"
+        >
+          Vercel
+        </ButtonLink2>
+      </ButtonContainer>
+    </Card>
+  )
+}
+
+export const Git4 = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  return (
+    <Card>
+      <ImageWrapper>
+        <img src={galeria} alt="" />
+        <Action onClick={() => setModalIsOpen(true)}>
+          <img src={zoom} alt="Clique para maximizar a imagem" />
+        </Action>
+      </ImageWrapper>
+      <Modal className={modalIsOpen ? 'visible' : ''}>
+        <ModalContent className="container">
+          <header>
+            <h4>Site Galeria de imagens</h4>
+            <img
+              src={close}
+              alt="Clique aqui para fechar"
+              onClick={() => setModalIsOpen(false)}
+            />
+          </header>
+          <img src={galeria} />
+        </ModalContent>
+        <div className="overlay" onClick={() => setModalIsOpen(false)}></div>
+      </Modal>
+      <Title>
+        <span>Site Galeria de Imagens</span>
+      </Title>
+      <Paragraph type="secondary">
+        Neste projeto, desenvolvemos uma galeria de imagens utilizando CSS, HTML
+        e jQuery. A galeria foi projetada com uma interface simples e intuitiva.
+        Apesar de não termos implementado um design responsivo, o objetivo foi
+        criar um modelo prático que serve como uma introdução eficaz ao uso
+        dessas ferramentas de desenvolvimento web.
+      </Paragraph>
+
+      <Languages>
+        <img
+          alt="Rafa-HTML"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+        />
+        <img
+          alt="Rafa-CSS"
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+        />
+        <img
+          alt="Rafa-Jquery"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-plain-wordmark.svg"
+        />
+      </Languages>
+      <ButtonContainer>
+        <ButtonLink
+          title="clique aqui para ir para o projeto no github"
+          href="https://github.com/ramagla/jquery-galeria-fotos.git"
+          target="blank"
+        >
+          Github
+        </ButtonLink>
+        <ButtonLink2
+          title="clique aqui para ir para o projeto na vercel"
+          href="https://jquery-galeria-fotos-nu-one.vercel.app/"
           target="blank"
         >
           Vercel
