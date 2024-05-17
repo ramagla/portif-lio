@@ -12,8 +12,18 @@ import {
 import Title from '../../components/Title'
 import { List, ButtonContainer, Button } from './styles'
 
+type ComponentType = React.ComponentType<object>
+
 const Projects = () => {
-  const [activeTab, setActiveTab] = useState('github')
+  const [activeTab, setActiveTab] = useState<'github' | 'powerbi'>('github')
+
+  const renderProjectList = (components: ComponentType[]) => {
+    return components.map((Component, index) => (
+      <li key={index}>
+        <Component />
+      </li>
+    ))
+  }
 
   return (
     <section>
@@ -35,38 +45,9 @@ const Projects = () => {
         {activeTab === 'github' ? 'Projetos GitHub' : 'Projetos PowerBI'}
       </Title>
       <List>
-        {activeTab === 'github' && (
-          <>
-            <li>
-              <Git1 />
-            </li>
-            <li>
-              <Git2 />
-            </li>
-            <li>
-              <Git3 />
-            </li>
-            <li>
-              <Git4 />
-            </li>
-            <li>
-              <Git5 />
-            </li>
-            <li>
-              <Git6 />
-            </li>
-          </>
-        )}
-        {activeTab === 'powerbi' && (
-          <>
-            <li>
-              <Pbi1 />
-            </li>
-            <li>
-              <Pbi2 />
-            </li>
-          </>
-        )}
+        {activeTab === 'github' &&
+          renderProjectList([Git1, Git2, Git3, Git4, Git5, Git6])}
+        {activeTab === 'powerbi' && renderProjectList([Pbi1, Pbi2])}
       </List>
     </section>
   )
