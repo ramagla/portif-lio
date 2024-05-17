@@ -36,7 +36,7 @@ export const Git1 = () => {
       <Modal className={modalIsOpen ? 'visible' : ''}>
         <ModalContent className="container">
           <header>
-            <h4>Projeto site de Delivery</h4>
+            <h4>Site de Delivery</h4>
             <img
               src={close}
               alt="Clique aqui para fechar"
@@ -48,7 +48,7 @@ export const Git1 = () => {
         <div className="overlay" onClick={() => setModalIsOpen(false)}></div>
       </Modal>
       <Title>
-        <span>Projeto site de Delivery</span>
+        <span>Site de Delivery</span>
       </Title>
       <Paragraph type="secondary">
         Para este projeto, optei por utilizar React juntamente com TypeScript. A
@@ -111,7 +111,7 @@ export const Git2 = () => {
       <Modal className={modalIsOpen ? 'visible' : ''}>
         <ModalContent className="container">
           <header>
-            <h4>Projeto site de Game</h4>
+            <h4>Site de Game</h4>
             <img
               src={close}
               alt="Clique aqui para fechar"
@@ -123,7 +123,7 @@ export const Git2 = () => {
         <div className="overlay" onClick={() => setModalIsOpen(false)}></div>
       </Modal>
       <Title>
-        <span>Projeto site de Games</span>
+        <span>Site de Games</span>
       </Title>
       <Paragraph type="secondary">
         Neste projeto, desenvolvi uma loja virtual de games, implementada com o
