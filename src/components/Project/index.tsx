@@ -9,7 +9,8 @@ import {
   ButtonContainer,
   Action,
   Modal,
-  ModalContent
+  ModalContent,
+  CardPw
 } from './styles'
 import Paragraph from '../Paragraph'
 import Title from '../Title'
@@ -334,13 +335,9 @@ export const Git4 = () => {
 
 export const Pbi1 = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
-  const [expanded, setExpanded] = useState(false)
 
-  const toggleExpansion = () => {
-    setExpanded(!expanded)
-  }
   return (
-    <Card expanded={expanded}>
+    <CardPw>
       <ImageWrapper>
         <img src={satisfacao} alt="Projeto de Pesquisa de Satisfação" />
         <Action onClick={() => setModalIsOpen(true)}>
@@ -364,9 +361,7 @@ export const Pbi1 = () => {
       <Title>
         <span>Projeto de pesquisa de Satisfação dos Colaboradores</span>
       </Title>
-      <Paragraph type="secondary" toggleExpansion={toggleExpansion}>
-        Recursos Humanos
-      </Paragraph>
+      <Paragraph type="secondary">Recursos Humanos</Paragraph>
       <ButtonPbi
         href="https://app.powerbi.com/view?r=eyJrIjoiZDdhMjhlYzItYmZjNi00MTgzLWE2ODQtMzExZGQ2MzUxMjRlIiwidCI6IjIxY2MyMTdmLWYzYzktNDQ2OC04YTFiLTJiNzIzODJkYTVhMSJ9"
         target="blank"
@@ -374,19 +369,15 @@ export const Pbi1 = () => {
       >
         Dashboard
       </ButtonPbi>
-    </Card>
+    </CardPw>
   )
 }
 
 export const Pbi2 = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
-  const [expanded, setExpanded] = useState(false)
 
-  const toggleExpansion = () => {
-    setExpanded(!expanded)
-  }
   return (
-    <Card expanded={expanded}>
+    <CardPw>
       <ImageWrapper>
         <img
           src={acompanhamento}
@@ -413,9 +404,7 @@ export const Pbi2 = () => {
       <Title>
         <span>Projeto de Acompanhamento de vendas: Franquia de lojas</span>
       </Title>
-      <Paragraph type="secondary" toggleExpansion={toggleExpansion}>
-        Setor Financeiro
-      </Paragraph>
+      <Paragraph type="secondary">Setor Financeiro</Paragraph>
       <ButtonPbi
         href="https://app.powerbi.com/view?r=eyJrIjoiY2EyNzAwY2YtMWUzMy00ODY5LTg1MjEtYWM2NWRmYzRkY2U2IiwidCI6IjIxY2MyMTdmLWYzYzktNDQ2OC04YTFiLTJiNzIzODJkYTVhMSJ9"
         target="blank"
@@ -423,7 +412,7 @@ export const Pbi2 = () => {
       >
         Dashboard
       </ButtonPbi>
-    </Card>
+    </CardPw>
   )
 }
 

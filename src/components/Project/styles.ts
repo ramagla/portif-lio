@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Card = styled.div<{ expanded: boolean }>`
-  // Adicionamos a tipagem para a prop expanded
   border: 1px solid ${(props) => props.theme.edgeColor};
   padding: 16px;
   border-radius: 10px;
@@ -18,6 +17,16 @@ export const Card = styled.div<{ expanded: boolean }>`
     height: auto;
     padding-bottom: 40px;
   `}
+`
+export const CardPw = styled.div`
+  border: 1px solid ${(props) => props.theme.edgeColor};
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: ${(props) => props.theme.secondaryColor};
+  overflow: hidden;
+  height: 100%;
+  transition: height 0.5s ease;
 `
 
 export const Action = styled.div`
