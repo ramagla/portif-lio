@@ -1,12 +1,23 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
+export const Card = styled.div<{ expanded: boolean }>`
+  // Adicionamos a tipagem para a prop expanded
   border: 1px solid ${(props) => props.theme.edgeColor};
   padding: 16px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: ${(props) => props.theme.secondaryColor};
-  height: 100%;
+  overflow: hidden;
+  height: ${(props) =>
+    props.expanded ? 'auto' : '540px'}; // Usamos a propriedade diretamente aqui
+  transition: height 0.5s ease;
+
+  ${(props) =>
+    props.expanded &&
+    `
+    height: auto;
+    padding-bottom: 40px;
+  `}
 `
 
 export const Action = styled.div`
@@ -69,6 +80,7 @@ export const ImageWrapper = styled.div`
   width: 100%;
   height: auto;
   margin-bottom: 16px;
+  /* height: 250px; */
 
   > img {
     width: 100%;
@@ -135,6 +147,7 @@ export const Modal = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.73);
+    transition: opacity 0.5s ease;
   }
 `
 export const ModalContent = styled.div`

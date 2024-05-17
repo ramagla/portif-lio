@@ -1,15 +1,46 @@
-import { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { P } from './styles'
 
-export type Props = {
-  children: ReactNode
+export type ParagraphProps = {
+  children: React.ReactNode
   type?: 'main' | 'secondary'
   fontSize?: number
+  toggleExpansion?: () => void // Adicione essa propriedade aos tipos
 }
-const Paragraph = ({ children, type = 'main', fontSize }: Props) => (
-  <P fontSize={fontSize} type={type}>
-    {children}
-  </P>
-)
+
+const getTextLength = (children: ReactNode): number => {
+  if (typeof children === 'string') {
+    return children.length
+  }
+  // Adicione mais lógica aqui se você quiser lidar com outros tipos de children
+  return 0
+}
+
+const Paragraph = ({
+  children,
+  type = 'main',
+  fontSize,
+  toggleExpansion
+}: ParagraphProps) => {
+  const [isTruncated, setIsTruncated] = useState(true)
+  const textLength = getTextLength(children)
+
+  const handleToggleTruncation = () => setIsTruncated(!isTruncated)
+
+  return (
+    <P fontSize={fontSize} type={type} onClick={toggleExpansion}>
+      {isTruncated
+        ? typeof children === 'string'
+          ? children.substring(0, 300) + '...'
+          : children
+        : children}
+      {textLength > 300 && (
+        <button onClick={handleToggleTruncation}>
+          {isTruncated ? 'Leia mais' : 'Ocultar'}
+        </button>
+      )}
+    </P>
+  )
+}
 
 export default Paragraph

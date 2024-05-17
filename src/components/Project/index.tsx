@@ -26,9 +26,14 @@ import galeria from '../../assets/images/galeria.png'
 
 export const Git1 = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
+  const toggleExpansion = () => {
+    setExpanded(!expanded)
+  }
 
   return (
-    <Card>
+    <Card expanded={expanded}>
       <ImageWrapper>
         <img src={efood} alt="" />
         <Action onClick={() => setModalIsOpen(true)}>
@@ -52,7 +57,7 @@ export const Git1 = () => {
       <Title>
         <span>Site de Delivery</span>
       </Title>
-      <Paragraph type="secondary">
+      <Paragraph toggleExpansion={toggleExpansion} type="secondary">
         Para este projeto, optei por utilizar React juntamente com TypeScript. A
         escolha do React permitiu-me criar uma interface de usuário interativa e
         eficiente, enquanto o TypeScript ofereceu um sistema de tipos robusto
@@ -102,8 +107,13 @@ export const Git1 = () => {
 
 export const Git2 = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
+  const toggleExpansion = () => {
+    setExpanded(!expanded)
+  }
   return (
-    <Card>
+    <Card expanded={expanded}>
       <ImageWrapper>
         <img src={egames} alt="" />
         <Action onClick={() => setModalIsOpen(true)}>
@@ -127,7 +137,7 @@ export const Git2 = () => {
       <Title>
         <span>Site de Games</span>
       </Title>
-      <Paragraph type="secondary">
+      <Paragraph type="secondary" toggleExpansion={toggleExpansion}>
         Neste projeto, desenvolvi uma loja virtual de games, implementada com o
         uso de React e TypeScript. A combinação dessas tecnologias permitiu a
         criação de uma plataforma robusta e escalável, proporcionando uma
@@ -179,8 +189,13 @@ export const Git2 = () => {
 
 export const Git3 = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
+  const toggleExpansion = () => {
+    setExpanded(!expanded)
+  }
   return (
-    <Card>
+    <Card expanded={expanded}>
       <ImageWrapper>
         <img src={gameshop} alt="" />
         <Action onClick={() => setModalIsOpen(true)}>
@@ -204,7 +219,7 @@ export const Git3 = () => {
       <Title>
         <span>Site de Games</span>
       </Title>
-      <Paragraph type="secondary">
+      <Paragraph type="secondary" toggleExpansion={toggleExpansion}>
         Neste projeto, construímos uma estrutura básica utilizando CSS e HTML.
         Embora a responsividade não tenha sido implementada, o foco foi criar um
         exemplo didático para facilitar o aprendizado dessas tecnologias
@@ -242,8 +257,14 @@ export const Git3 = () => {
 
 export const Git4 = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
+  const toggleExpansion = () => {
+    setExpanded(!expanded)
+  }
+
   return (
-    <Card>
+    <Card expanded={expanded}>
       <ImageWrapper>
         <img src={galeria} alt="" />
         <Action onClick={() => setModalIsOpen(true)}>
@@ -267,7 +288,7 @@ export const Git4 = () => {
       <Title>
         <span>Site Galeria de Imagens</span>
       </Title>
-      <Paragraph type="secondary">
+      <Paragraph type="secondary" toggleExpansion={toggleExpansion}>
         Neste projeto, desenvolvemos uma galeria de imagens utilizando CSS, HTML
         e jQuery. A galeria foi projetada com uma interface simples e intuitiva.
         Apesar de não termos implementado um design responsivo, o objetivo foi
@@ -313,8 +334,13 @@ export const Git4 = () => {
 
 export const Pbi1 = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
+  const toggleExpansion = () => {
+    setExpanded(!expanded)
+  }
   return (
-    <Card>
+    <Card expanded={expanded}>
       <ImageWrapper>
         <img src={satisfacao} alt="Projeto de Pesquisa de Satisfação" />
         <Action onClick={() => setModalIsOpen(true)}>
@@ -338,7 +364,9 @@ export const Pbi1 = () => {
       <Title>
         <span>Projeto de pesquisa de Satisfação dos Colaboradores</span>
       </Title>
-      <Paragraph type="secondary">Recursos Humanos</Paragraph>
+      <Paragraph type="secondary" toggleExpansion={toggleExpansion}>
+        Recursos Humanos
+      </Paragraph>
       <ButtonPbi
         href="https://app.powerbi.com/view?r=eyJrIjoiZDdhMjhlYzItYmZjNi00MTgzLWE2ODQtMzExZGQ2MzUxMjRlIiwidCI6IjIxY2MyMTdmLWYzYzktNDQ2OC04YTFiLTJiNzIzODJkYTVhMSJ9"
         target="blank"
@@ -352,8 +380,13 @@ export const Pbi1 = () => {
 
 export const Pbi2 = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
+  const toggleExpansion = () => {
+    setExpanded(!expanded)
+  }
   return (
-    <Card>
+    <Card expanded={expanded}>
       <ImageWrapper>
         <img
           src={acompanhamento}
@@ -380,7 +413,9 @@ export const Pbi2 = () => {
       <Title>
         <span>Projeto de Acompanhamento de vendas: Franquia de lojas</span>
       </Title>
-      <Paragraph type="secondary">Setor Financeiro</Paragraph>
+      <Paragraph type="secondary" toggleExpansion={toggleExpansion}>
+        Setor Financeiro
+      </Paragraph>
       <ButtonPbi
         href="https://app.powerbi.com/view?r=eyJrIjoiY2EyNzAwY2YtMWUzMy00ODY5LTg1MjEtYWM2NWRmYzRkY2U2IiwidCI6IjIxY2MyMTdmLWYzYzktNDQ2OC04YTFiLTJiNzIzODJkYTVhMSJ9"
         target="blank"

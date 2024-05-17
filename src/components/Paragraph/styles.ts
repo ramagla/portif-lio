@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Props } from './index'
+import { ParagraphProps } from './index'
 
-export const P = styled.p<Props>`
+export const P = styled.p<ParagraphProps>`
   font-size: ${(props) => (props.fontSize ? props.fontSize + 'px' : '14px')};
   color: ${(props) =>
     props.type === 'main' ? props.theme.mainColor : props.theme.mainColor};
