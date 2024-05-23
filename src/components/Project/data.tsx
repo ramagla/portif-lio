@@ -8,6 +8,8 @@ import acompanhamento from '../../assets/images/acompanhamento.png'
 import galeria from '../../assets/images/galeria.png'
 import restaurante from '../../assets/images/restaurante.png'
 import sorteador from '../../assets/images/sorteador.png'
+import emailmkt from '../../assets/images/emailmkt.png'
+import tarefas from '../../assets/images/tarefas.png'
 import { ProjectType } from '../../containers/Projects/index'
 
 export const projectData: ProjectType[] = [
@@ -70,6 +72,26 @@ export const projectData: ProjectType[] = [
     languages: ['html5', 'css3', 'grunt'],
     githubLink: 'https://github.com/ramagla/bootstrap_restaurante.git',
     vercelLink: 'https://bootstrap-restaurante-lemon.vercel.app/'
+  },
+  {
+    id: 'Git7',
+    imgSrc: emailmkt,
+    title: 'Emails Marketing',
+    description:
+      'Desenvolvimento de 4 emails marketing em HTML com estilização embutida no código. Essa estratégia garante que os emails sejam renderizados corretamente em diversos dispositivos, proporcionando uma experiência impecável para os clientes.',
+    languages: ['html5'],
+    githubLink: 'https://github.com/ramagla/email_market.git',
+    vercelLink: 'https://email-market.vercel.app/'
+  },
+  {
+    id: 'Git8',
+    imgSrc: tarefas,
+    title: 'Lista de tarefas',
+    description:
+      'Neste projeto, desenvolvemos uma lista de tarefas utilizando React e TypeScript, com funcionalidades de busca e soma automática.',
+    languages: ['typescript', 'react', 'html5', 'css3', 'redux'],
+    githubLink: 'https://github.com/ramagla/minhas-tarefas.git',
+    vercelLink: 'https://minhas-tarefas-zeta.vercel.app/'
   }
 ]
 
