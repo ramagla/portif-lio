@@ -1,3 +1,5 @@
+//src/componets/Project/styles.ts
+
 import styled from 'styled-components'
 
 export const Card = styled.div<{ expanded: boolean }>`
@@ -107,14 +109,29 @@ export const ImageWrapper = styled.div`
 `
 export const Languages = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* display: flex;
   padding-top: 16px;
   justify-content: center;
   img {
     align-items: center;
     height: 30px;
     width: 40px;
-  }
+  } */
 `
+
+// export const ButtonContainer = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   margin-top: 16px;
+// `
 
 export const ButtonPbi = styled.a`
   color: white;

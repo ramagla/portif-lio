@@ -1,4 +1,4 @@
-// styles.ts dentro da pasta components/project
+//src/containers/Projects/styles.ts
 
 import styled from 'styled-components'
 
