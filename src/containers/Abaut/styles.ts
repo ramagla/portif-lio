@@ -1,3 +1,5 @@
+// Arquivo: src/containers/Abaut/styles.ts
+
 import styled from 'styled-components'
 
 export const GithubSection = styled.div`
@@ -28,6 +30,7 @@ export const Languages = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   img {
     align-items: center;
     height: 30px;
@@ -38,6 +41,7 @@ export const Languages = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin-right: 10px;
+
     img {
       margin: 5px;
       max-width: calc(25% - 20px);
@@ -56,6 +60,7 @@ export const SocialMedia = styled.div`
     padding-top: 16px;
     padding-bottom: 16px;
   }
+
   @media (max-width: 768px) {
     display: flex;
     flex-wrap: wrap;

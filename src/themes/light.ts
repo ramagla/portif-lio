@@ -1,3 +1,5 @@
+//src/themes/light.ts
+
 const ligthTheme = {
   mainColor: '#282a35',
   secondaryColor: '#949494',

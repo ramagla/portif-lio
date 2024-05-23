@@ -1,3 +1,5 @@
+//src/containers/Sidebar/styles.ts
+
 import styled from 'styled-components'
 import { P } from '../../components/Paragraph/styles'
 

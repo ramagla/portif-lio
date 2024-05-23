@@ -1,4 +1,5 @@
-// data.ts
+//src/components/Project/data.tsx
+
 import egames from '../../assets/images/egames.png'
 import efood from '../../assets/images/efood.png'
 import gameshop from '../../assets/images/gameshop.png'

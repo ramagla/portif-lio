@@ -1,3 +1,5 @@
+//src/containers/Sidebar/index.tsx
+
 import Avatar from '../../components/Avatar'
 import Paragraph from '../../components/Paragraph'
 import Title from '../../components/Title'
@@ -11,7 +13,7 @@ type Props = {
 const Sidebar = (props: Props) => (
   <aside>
     <SidebarContainer>
-      <Avatar />
+      <Avatar src={'https://github.com/ramagla.png'} />
       <Title fontSize={20}>Rafael de Almeida</Title>
       <Paragraph type="secondary" fontSize={16}>
         ramagla

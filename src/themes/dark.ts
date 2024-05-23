@@ -1,3 +1,5 @@
+//src/themes/dark.ts
+
 const DarkTheme = {
   mainColor: '#fff',
   secondaryColor: '#000',

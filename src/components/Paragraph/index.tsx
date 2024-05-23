@@ -1,3 +1,5 @@
+//src/components/Paragraph/index.tsx
+
 import React from 'react'
 import { P } from './styles'
 

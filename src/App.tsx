@@ -1,3 +1,5 @@
+//src/App.tsx
+
 import { ThemeProvider } from 'styled-components'
 import Projects from './containers/Projects'
 import Sidebar from './containers/Sidebar'

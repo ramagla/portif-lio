@@ -1,3 +1,5 @@
+//src/styles.ts
+
 import styled, { createGlobalStyle } from 'styled-components'
 import { Theme } from './themes/dark'
 const GlobalStyle = createGlobalStyle`

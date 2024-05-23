@@ -1,3 +1,5 @@
+//src/components/Paragraph/styles.ts
+
 import styled from 'styled-components'
 import { ParagraphProps } from './index'
 
