@@ -10,8 +10,9 @@ export const Card = styled.div<{ expanded: boolean }>`
   background-color: ${(props) => props.theme.secondaryColor};
   overflow: hidden;
   height: ${(props) =>
-    props.expanded ? 'auto' : '500px'}; // Usamos a propriedade diretamente aqui
+    props.expanded ? 'auto' : '290px'}; // Usamos a propriedade diretamente aqui
   transition: height 0.5s ease;
+  cursor: pointer;
 
   ${(props) =>
     props.expanded &&
@@ -91,7 +92,7 @@ export const ImageWrapper = styled.div`
   width: 100%;
   height: auto;
   margin-bottom: 16px;
-  /* height: 250px; */
+  height: 250px;
 
   > img {
     width: 100%;
@@ -111,6 +112,9 @@ export const Languages = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 16px;
 
   img {
     width: 24px;
@@ -198,4 +202,12 @@ export const ModalContent = styled.div`
     max-width: 100%;
     cursor: pointer;
   }
+`
+
+export const Content = styled.div<{ expanded: boolean }>`
+  margin-top: 16px;
+  transition: all 0.3s ease-in-out;
+  opacity: ${(props) => (props.expanded ? '1' : '0')};
+  max-height: ${(props) => (props.expanded ? 'auto' : '0')};
+  overflow: hidden;
 `

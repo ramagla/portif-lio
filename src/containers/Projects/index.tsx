@@ -118,7 +118,7 @@
 import React, { useState } from 'react'
 import Title from '../../components/Title'
 import { List, ButtonContainer, Button } from './styles'
-import ProjectCard from '../../components/Project/index'
+import ProjectCard from '../../components/Project/projectCard'
 import ProjectCardPw from '../../components/Project/projectCardPw' // Adicione a importação do novo componente
 import { projectData, pbiData } from '../../components/Project/data'
 

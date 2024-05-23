@@ -8,7 +8,8 @@ import {
   ButtonContainer,
   Action,
   Modal,
-  ModalContent
+  ModalContent,
+  Content
 } from './styles'
 import Paragraph from '../Paragraph'
 import Title from '../Title'
@@ -39,7 +40,11 @@ const ProjectCard = ({
   const toggleExpansion = () => setExpanded(!expanded)
 
   return (
-    <Card expanded={expanded}>
+    <Card
+      expanded={expanded}
+      onClick={toggleExpansion}
+      title="Clique para mais detalhes"
+    >
       <ImageWrapper>
         <img src={imgSrc} alt={title} />
         <Action onClick={() => setModalIsOpen(true)}>
@@ -66,35 +71,37 @@ const ProjectCard = ({
       <Paragraph toggleExpansion={toggleExpansion} type="secondary">
         {description}
       </Paragraph>
-      <Languages>
-        {languages.map((lang) => (
-          <img
-            key={lang}
-            alt={`Rafa-${lang}`}
-            src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${lang}/${lang}-original.svg`}
-          />
-        ))}
-      </Languages>
-      <ButtonContainer>
-        {githubLink && (
-          <ButtonLink
-            title="Clique aqui para ir para o projeto no GitHub"
-            href={githubLink}
-            target="_blank"
-          >
-            GitHub
-          </ButtonLink>
-        )}
-        {vercelLink && (
-          <ButtonLink2
-            title="Clique aqui para ir para o Vercel"
-            href={vercelLink}
-            target="_blank"
-          >
-            Vercel
-          </ButtonLink2>
-        )}
-      </ButtonContainer>
+      <Content expanded={expanded}>
+        <Languages>
+          {languages.map((lang) => (
+            <img
+              key={lang}
+              alt={`Rafa-${lang}`}
+              src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${lang}/${lang}-original.svg`}
+            />
+          ))}
+        </Languages>
+        <ButtonContainer>
+          {githubLink && (
+            <ButtonLink
+              title="Clique aqui para ir para o projeto no GitHub"
+              href={githubLink}
+              target="_blank"
+            >
+              GitHub
+            </ButtonLink>
+          )}
+          {vercelLink && (
+            <ButtonLink2
+              title="Clique aqui para ir para o Vercel"
+              href={vercelLink}
+              target="_blank"
+            >
+              Vercel
+            </ButtonLink2>
+          )}
+        </ButtonContainer>
+      </Content>
     </Card>
   )
 }
