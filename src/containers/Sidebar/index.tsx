@@ -19,7 +19,8 @@ const Sidebar = (props: Props) => (
         ramagla
       </Paragraph>
       <Description type="main" fontSize={16}>
-        Engenheiro front-end
+        Gestor de Projetos de TI com foco em Automação, Infraestrutura e
+        Agilidade{' '}
       </Description>
       <Button href="/files/curriculo.pdf" target="_blank">
         Baixar Currículo
