@@ -1,88 +1,115 @@
-//src/containers/Sidebar/styles.ts
-
 import styled from 'styled-components'
 import { P } from '../../components/Paragraph/styles'
 
+// Descrição abaixo do nome
 export const Description = styled(P)`
   margin-top: 24px;
   margin-bottom: 40px;
 `
 
+// Container da Sidebar
 export const SidebarContainer = styled.div`
   position: sticky;
-  width: 180px;
   top: 80px;
   left: 0;
+  width: 100%;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media (max-width: 768px) {
-    margin-bottom: 40px;
-    margin-top: 40px;
-    text-align: center;
     position: static;
-    width: 100%;
-    margin-bottom: 20px;
+    margin: 40px auto 20px;
     text-align: center;
   }
 `
 
-export const ThemeButton = styled.button`
-  border-radius: 12px;
-  padding: 8px;
-  color: ${(props) => props.theme.backgroundColor};
-  font-size: 10px;
-  font-weight: bold;
-  background-color: ${(props) => props.theme.mainColor};
-  cursor: pointer;
-  margin-left: 46px;
-
-  @media (max-width: 768px) {
-    margin-left: 0;
-  }
-`
-
-export const DownloadButton = styled.a`
-  border-radius: 12px;
-  padding: 8px;
-  color: ${(props) => props.theme.backgroundColor};
-  font-size: 10px;
-  font-weight: bold;
-  background-color: ${(props) => props.theme.mainColor};
-  cursor: pointer;
-  margin-left: 46px;
-  text-decoration: none;
-
-  &:hover {
-    background-color: #45a049; // Cor de fundo do botão ao passar o mouse
-  }
-
-  @media (max-width: 768px) {
-    margin-left: 0;
-  }
-`
-
+/**
+ * Botão genérico estilizado usado para:
+ * - Baixar Currículo
+ * - Acessar Blog
+ * - etc.
+ */
 export const Button = styled.a`
-  border-radius: 8px;
-  padding: 8px;
-  color: ${(props) => props.theme.backgroundColor};
-  font-size: 16px;
-  font-weight: bold;
+  width: 100%;
+  max-width: 180px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+  margin: 8px 0;
+
   background-color: ${(props) => props.theme.mainColor};
-  cursor: pointer;
-  margin: 10px; // Adicione margem para espaçamento
-  width: auto; // Largura fixa para ambos os botões
-  height: auto; // Altura fixa para ambos os botões
-  display: block; // Faça os botões ocuparem sua própria linha
-  text-align: center; // Centralize o texto dentro do botão
+  color: ${(props) => props.theme.backgroundColor};
+  font-size: 14px;
+  font-weight: bold;
   text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 
   &:hover {
-    background-color: lightblue; // Cor de fundo do botão ao passar o mouse
+    background-color: lightblue;
+    transform: translateY(-2px);
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
   }
 
   @media (max-width: 768px) {
-    margin-left: auto;
-    margin-right: auto;
-    width: 140px;
-    text-align: center;
+    max-width: 100%;
+  }
+`
+
+/**
+ * Versão específica do botão para ser usada com tag <button>
+ * Ex: botão de "Trocar Tema", para evitar warnings com <a as="button">
+ */
+export const ButtonStyled = styled.button`
+  width: 100%;
+  max-width: 180px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+  margin: 8px 0;
+
+  background-color: ${(props) => props.theme.mainColor};
+  color: ${(props) => props.theme.backgroundColor};
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    background-color: lightblue;
+    transform: translateY(-2px);
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 `

@@ -26,9 +26,9 @@ export const ButtonContainer = styled.div`
   margin-top: 16px;
 `
 
-export const Button = styled.button<{ active: boolean }>`
-  background-color: ${({ active }) => (active ? '#007bff' : '#fff')};
-  color: ${({ active }) => (active ? '#fff' : '#007bff')};
+export const Button = styled.button<{ $active: boolean }>`
+  background-color: ${({ $active }) => ($active ? '#007bff' : '#fff')};
+  color: ${({ $active }) => ($active ? '#fff' : '#007bff')};
   border: 1px solid #007bff;
   border-radius: 4px;
   padding: 8px 16px;

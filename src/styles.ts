@@ -9,7 +9,9 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'Inter', sans-serif;
   list-style: none;
 }
-
+.hidden {
+    display: none !important;
+  }
 body {
   padding-top: 80px;
   padding-bottom: 80px;

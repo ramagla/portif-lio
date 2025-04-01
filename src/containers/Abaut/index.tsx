@@ -87,7 +87,7 @@ const Abaut = () => (
       >
         <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
       </a>
-      <a href="mailto:ramagla2@gmail.com" target="blank">
+      <a href="mailto:ramagla1@gmail.com" target="blank">
         <img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" />
       </a>
       <a
