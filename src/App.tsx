@@ -14,9 +14,11 @@ type Project = {
   description: string
   tags: string[]
   href: string
+  image: string
   liveUrl?: string
   tone: 'blue' | 'green' | 'purple' | 'coral'
   number: string
+  imageFit?: 'cover' | 'contain'
 }
 
 const projects: Project[] = [
@@ -27,6 +29,7 @@ const projects: Project[] = [
       'Portal operacional que conecta indicadores, rotinas de DP e módulos internos em uma experiência única, segura e instalável.',
     tags: ['Django', 'React', 'Oracle', 'PWA'],
     href: 'https://github.com/ramagla/Projeto_BI',
+    image: '/projects/portal-gestao.webp',
     tone: 'blue',
     number: '01'
   },
@@ -37,8 +40,10 @@ const projects: Project[] = [
       'Landing page institucional criada para apresentar o negócio com clareza, fortalecer a marca e transformar visitas em contatos.',
     tags: ['React', 'UX/UI', 'Responsivo'],
     href: 'https://github.com/ramagla/landpage_sib',
+    image: '/projects/sib-logo.webp',
     tone: 'green',
-    number: '02'
+    number: '02',
+    imageFit: 'contain'
   },
   {
     title: 'Romeu Beauty',
@@ -48,6 +53,7 @@ const projects: Project[] = [
     tags: ['React', 'Vite', 'Tailwind', 'SEO'],
     href: 'https://github.com/ramagla/landpage_romeu',
     liveUrl: 'https://www.romeuferrazin.com.br',
+    image: '/projects/romeu-beauty.webp',
     tone: 'purple',
     number: '03'
   },
@@ -59,6 +65,7 @@ const projects: Project[] = [
     tags: ['React', 'APIs', 'SQLite', 'Vercel'],
     href: 'https://github.com/ramagla/landpage_duda',
     liveUrl: 'https://www.dudanoibiza.com.br',
+    image: '/projects/duda-16.webp',
     tone: 'coral',
     number: '04'
   }
@@ -82,37 +89,33 @@ const capabilities = [
   }
 ]
 
-function ProjectPreview({ project }: { project: Project }) {
+function Brand() {
   return (
-    <div
-      className={`project-preview project-preview--${project.tone}`}
-      aria-hidden="true"
-    >
-      <div className="preview-topbar">
+    <span className="brand-lockup">
+      <img src="/brand/ra-monogram-512.png" alt="" width="40" height="40" />
+      <span>
+        Rafael
+        <strong>Almeida</strong>
+      </span>
+    </span>
+  )
+}
+
+function ProjectVisual({ project }: { project: Project }) {
+  return (
+    <div className={`project-visual project-visual--${project.tone}`}>
+      <div className="project-browser-bar" aria-hidden="true">
         <span />
         <span />
         <span />
-        <small>{project.number}</small>
+        <small>Projeto real · {project.number}</small>
       </div>
-      <div className="preview-shell">
-        <div className="preview-sidebar">
-          <span className="preview-logo">RA</span>
-          <i />
-          <i />
-          <i />
-        </div>
-        <div className="preview-content">
-          <span className="preview-kicker">{project.eyebrow}</span>
-          <strong>{project.title}</strong>
-          <div className="preview-line preview-line--long" />
-          <div className="preview-line" />
-          <div className="preview-grid">
-            <i />
-            <i />
-            <i />
-          </div>
-        </div>
-      </div>
+      <img
+        className={`project-image project-image--${project.imageFit ?? 'cover'}`}
+        src={project.image}
+        alt={`Imagem real do projeto ${project.title}`}
+        loading="lazy"
+      />
     </div>
   )
 }
@@ -122,12 +125,8 @@ function App() {
     <>
       <Analytics />
       <header className="site-header">
-        <a
-          className="brand"
-          href="#inicio"
-          aria-label="Rafael Almeida — início"
-        >
-          RA<span>.</span>
+        <a href="#inicio" aria-label="Rafael Almeida — início">
+          <Brand />
         </a>
         <nav aria-label="Navegação principal">
           <a href="#sobre">Sobre</a>
@@ -146,6 +145,9 @@ function App() {
 
       <main>
         <section className="hero section" id="inicio">
+          <div className="hero-shape hero-shape--one" aria-hidden="true" />
+          <div className="hero-shape hero-shape--two" aria-hidden="true" />
+
           <div className="hero-copy">
             <p className="eyebrow">
               <span />
@@ -176,135 +178,146 @@ function App() {
           <div className="hero-card">
             <div className="portrait-frame">
               <img
-                src="https://github.com/ramagla.png"
+                src="/brand/rafael-avatar.webp"
                 alt="Rafael Almeida"
-                width="420"
-                height="420"
+                width="360"
+                height="360"
               />
-              <span className="status-dot" aria-hidden="true" />
             </div>
             <div className="hero-card-caption">
               <span>Brasil</span>
-              <strong>Disponível para novos desafios</strong>
+              <strong>
+                <i aria-hidden="true" />
+                Disponível para novos projetos
+              </strong>
             </div>
           </div>
 
-          <a
-            className="scroll-cue"
-            href="#sobre"
-            aria-label="Ir para a seção sobre"
-          >
-            Role para descobrir <FaArrowDown />
-          </a>
-        </section>
-
-        <section className="about section" id="sobre">
-          <div className="section-heading">
-            <p className="eyebrow">Sobre mim</p>
-            <h2>Estratégia na cabeça. Código nas mãos.</h2>
-          </div>
-          <div className="about-intro">
-            <p className="about-lead">
-              Minha experiência une gestão de projetos de TI e desenvolvimento
-              full stack para resolver problemas com visão prática.
-            </p>
-            <p>
-              Gosto de entrar no contexto, entender pessoas e processos, e
-              traduzir tudo em uma solução simples de usar. Trabalho com
-              aplicações web, portais corporativos, automações, dados e
-              experiências digitais para negócios.
-            </p>
-          </div>
-          <div className="capabilities">
-            {capabilities.map((capability) => (
-              <article key={capability.number}>
-                <span>{capability.number}</span>
-                <h3>{capability.title}</h3>
-                <p>{capability.text}</p>
-              </article>
-            ))}
-          </div>
-          <div className="stack">
-            <span>Trabalho com</span>
-            <div>
-              <strong>Python</strong>
-              <strong>Django</strong>
-              <strong>React</strong>
-              <strong>TypeScript</strong>
-              <strong>Power BI</strong>
-              <strong>SQL</strong>
-              <strong>AWS</strong>
-            </div>
+          <div className="hero-proof">
+            <span>Produtos digitais</span>
+            <span>Portais corporativos</span>
+            <span>Automação & dados</span>
           </div>
         </section>
 
-        <section className="projects section" id="projetos">
-          <div className="section-heading section-heading--projects">
-            <div>
-              <p className="eyebrow">Projetos selecionados</p>
-              <h2>Trabalho que resolve.</h2>
+        <section className="about" id="sobre">
+          <div className="section about-inner">
+            <div className="section-heading">
+              <p className="eyebrow">Sobre mim</p>
+              <h2>
+                Estratégia na cabeça.
+                <br />
+                <em>Código nas mãos.</em>
+              </h2>
             </div>
-            <p>
-              Uma seleção de produtos digitais, sistemas de gestão e
-              experiências criadas para contextos reais.
-            </p>
+            <div className="about-intro">
+              <p className="about-lead">
+                Minha experiência une gestão de projetos de TI e desenvolvimento
+                full stack para resolver problemas com visão prática.
+              </p>
+              <p>
+                Entro no contexto, entendo pessoas e processos e traduzo tudo em
+                uma solução simples de usar. Trabalho com aplicações web,
+                portais corporativos, automações, dados e experiências digitais
+                para negócios.
+              </p>
+            </div>
+            <div className="capabilities">
+              {capabilities.map((capability) => (
+                <article key={capability.number}>
+                  <span>{capability.number}</span>
+                  <h3>{capability.title}</h3>
+                  <p>{capability.text}</p>
+                </article>
+              ))}
+            </div>
+            <div className="stack">
+              <span>Trabalho com</span>
+              <div>
+                <strong>Python</strong>
+                <strong>Django</strong>
+                <strong>React</strong>
+                <strong>TypeScript</strong>
+                <strong>Power BI</strong>
+                <strong>SQL</strong>
+                <strong>AWS</strong>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div className="project-list">
-            {projects.map((project) => (
-              <article className="project-card" key={project.title}>
-                <ProjectPreview project={project} />
-                <div className="project-copy">
-                  <span className="project-number">
-                    Projeto {project.number}
-                  </span>
-                  <p className="project-eyebrow">{project.eyebrow}</p>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <ul aria-label={`Tecnologias do projeto ${project.title}`}>
-                    {project.tags.map((tag) => (
-                      <li key={tag}>{tag}</li>
-                    ))}
-                  </ul>
-                  <div className="project-links">
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Ver projeto <FaArrowUpRightFromSquare />
+        <section className="projects" id="projetos">
+          <div className="section projects-inner">
+            <div className="section-heading section-heading--projects">
+              <div>
+                <p className="eyebrow">Projetos selecionados</p>
+                <h2>Trabalho real. Resultado visível.</h2>
+              </div>
+              <p>
+                Produtos digitais, sistemas de gestão e experiências construídas
+                para contextos reais.
+              </p>
+            </div>
+
+            <div className="project-list">
+              {projects.map((project) => (
+                <article className="project-card" key={project.title}>
+                  <ProjectVisual project={project} />
+                  <div className="project-copy">
+                    <span className="project-number">
+                      Projeto {project.number}
+                    </span>
+                    <p className="project-eyebrow">{project.eyebrow}</p>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <ul aria-label={`Tecnologias do projeto ${project.title}`}>
+                      {project.tags.map((tag) => (
+                        <li key={tag}>{tag}</li>
+                      ))}
+                    </ul>
+                    <div className="project-links">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Ver projeto <FaArrowUpRightFromSquare />
+                        </a>
+                      )}
+                      <a href={project.href} target="_blank" rel="noreferrer">
+                        <FaGithub /> Código
                       </a>
-                    )}
-                    <a href={project.href} target="_blank" rel="noreferrer">
-                      <FaGithub /> Código
-                    </a>
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
+                </article>
+              ))}
+            </div>
 
-          <a
-            className="all-projects"
-            href="https://github.com/ramagla?tab=repositories"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ver todos os projetos no GitHub <FaArrowUpRightFromSquare />
-          </a>
+            <a
+              className="all-projects"
+              href="https://github.com/ramagla?tab=repositories"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ver todos os projetos no GitHub <FaArrowUpRightFromSquare />
+            </a>
+          </div>
         </section>
 
         <section className="contact section" id="contato">
+          <div className="contact-mark" aria-hidden="true">
+            RA
+          </div>
           <p className="eyebrow">Vamos conversar</p>
           <h2>
-            Tem um desafio em mente?
+            Tem um projeto em mente?
             <br />
             <em>Vamos tirar do papel.</em>
           </h2>
           <p>
-            Estou aberto a projetos, parcerias e oportunidades em que gestão e
-            tecnologia precisem trabalhar juntas.
+            Estou aberto a projetos e parcerias em que gestão e tecnologia
+            precisem trabalhar juntas.
           </p>
           <div className="contact-actions">
             <a
@@ -325,9 +338,9 @@ function App() {
         </section>
       </main>
 
-      <footer>
-        <a className="brand" href="#inicio">
-          RA<span>.</span>
+      <footer className="section">
+        <a href="#inicio">
+          <Brand />
         </a>
         <p>© {new Date().getFullYear()} Rafael Almeida</p>
         <div>
