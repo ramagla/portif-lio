@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import {
   FaArrowDown,
@@ -19,11 +20,11 @@ import {
 import {
   areas,
   contacts,
+  education,
   highlights,
   projects,
   technologyGroups
 } from './data/portfolio'
-import { education } from './data/portfolio'
 import './app.css'
 
 const areaIcons = [
@@ -113,6 +114,8 @@ function ProjectVisual({
 }
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
     <>
       <Analytics />
@@ -134,11 +137,32 @@ function App() {
         >
           GitHub <ExternalIcon />
         </a>
-        <details className="mobile-menu">
-          <summary aria-label="Abrir navegação">
+        <details
+          className="mobile-menu"
+          open={mobileMenuOpen}
+          onToggle={(event) => setMobileMenuOpen(event.currentTarget.open)}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape') {
+              setMobileMenuOpen(false)
+            }
+          }}
+        >
+          <summary
+            aria-label={mobileMenuOpen ? 'Fechar navegação' : 'Abrir navegação'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
+          >
             <FaBars aria-hidden="true" />
           </summary>
-          <nav aria-label="Navegação mobile">
+          <nav
+            id="mobile-navigation"
+            aria-label="Navegação mobile"
+            onClick={(event) => {
+              if ((event.target as HTMLElement).closest('a')) {
+                setMobileMenuOpen(false)
+              }
+            }}
+          >
             <a href="#sobre">Visão</a>
             <a href="#atuacao">Atuação</a>
             <a href="#projetos">Cases</a>
@@ -369,25 +393,11 @@ function App() {
                   )}
                 </div>
 
-                {(item.logo || item.credential) && (
+                {item.credential && (
                   <div className="education-meta">
-                    {item.logo && (
-                      <div className="education-brand">
-                        <img
-                          src={item.logo}
-                          alt={item.logoAlt ?? ''}
-                          width="52"
-                          height="52"
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
-
-                    {item.credential && (
-                      <span className="education-credential">
-                        {item.credential}
-                      </span>
-                    )}
+                    <span className="education-credential">
+                      {item.credential}
+                    </span>
                   </div>
                 )}
               </article>

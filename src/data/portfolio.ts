@@ -17,7 +17,13 @@ import {
   SiRedis,
   SiTypescript
 } from 'react-icons/si'
-import { FaCodeBranch, FaDiagramProject, FaServer } from 'react-icons/fa6'
+import {
+  FaCodeBranch,
+  FaDiagramProject,
+  FaNetworkWired,
+  FaServer,
+  FaShieldHalved
+} from 'react-icons/fa6'
 
 export const contacts = {
   email: 'rafaelalmeida@outlook.com',
@@ -101,37 +107,47 @@ export const technologyGroups: TechnologyGroup[] = [
   {
     number: '01',
     title: 'Gestão & Processos',
-    description: 'BPM, desenho de processos e práticas de gestão.',
+    description: 'BPM, desenho de processos, governança e práticas de gestão.',
     items: [
       { name: 'Bizagi', image: '/brand/bizagi.webp' },
       { name: 'BPM', icon: FaDiagramProject },
+      { name: 'Gestão de Projetos', icon: FaDiagramProject },
       { name: 'Scrum', icon: FaCodeBranch },
-      { name: 'Kanban', icon: FaCodeBranch }
+      { name: 'Kanban', icon: FaCodeBranch },
+      { name: 'ITIL', icon: FaDiagramProject },
+      { name: 'COBIT', icon: FaDiagramProject }
     ]
   },
   {
     number: '02',
     title: 'Infraestrutura & Cloud',
-    description: 'Ambientes, serviços e sustentação corporativa.',
+    description:
+      'Ambientes, identidade, conectividade e sustentação corporativa.',
     items: [
       { name: 'AWS', icon: SiAmazonaws },
+      { name: 'AWS EC2', icon: SiAmazonaws },
       { name: 'Windows Server', icon: FaServer },
       { name: 'Linux', icon: SiLinux },
+      { name: 'Active Directory', icon: SiMicrosoft },
       { name: 'Microsoft 365', icon: SiMicrosoft },
-      { name: 'Apache', icon: SiApache }
+      { name: 'Apache', icon: SiApache },
+      { name: 'pfSense', icon: FaShieldHalved },
+      { name: 'OpenVPN', icon: FaNetworkWired }
     ]
   },
   {
     number: '03',
     title: 'Desenvolvimento & Automação',
-    description: 'Aplicações, integrações e rotinas automatizadas.',
+    description:
+      'Aplicações, integrações e automação de processos corporativos.',
     items: [
       { name: 'Python', icon: SiPython },
       { name: 'Django', icon: SiDjango },
+      { name: 'PowerShell', icon: FaCodeBranch },
+      { name: 'Power Automate', icon: SiMicrosoft },
       { name: 'React', icon: SiReact },
       { name: 'TypeScript', icon: SiTypescript },
       { name: 'JavaScript', icon: SiJavascript },
-      { name: 'PowerShell', icon: FaCodeBranch },
       { name: 'REST APIs', icon: FaCodeBranch },
       { name: 'Git', icon: SiGit },
       { name: 'HTML', icon: SiHtml5 },
@@ -141,13 +157,26 @@ export const technologyGroups: TechnologyGroup[] = [
   {
     number: '04',
     title: 'Dados & BI',
-    description: 'Bases, indicadores e suporte à decisão.',
+    description: 'Bancos de dados, indicadores, análise e suporte à decisão.',
     items: [
       { name: 'PostgreSQL', icon: SiPostgresql },
       { name: 'Oracle', icon: SiOracle },
+      { name: 'SQL', icon: FaCodeBranch },
       { name: 'Power BI', icon: SiPowerbi },
-      { name: 'Redis', icon: SiRedis },
-      { name: 'SQL', icon: FaCodeBranch }
+      { name: 'DAX', icon: FaCodeBranch },
+      { name: 'Excel', icon: SiMicrosoft },
+      { name: 'Redis', icon: SiRedis }
+    ]
+  },
+  {
+    number: '05',
+    title: 'Sistemas & Integrações',
+    description:
+      'Sistemas corporativos e integração entre aplicações e operação.',
+    items: [
+      { name: 'Teknisa', icon: FaDiagramProject },
+      { name: 'APIs REST', icon: FaCodeBranch },
+      { name: 'Microsoft 365', icon: SiMicrosoft }
     ]
   }
 ]
@@ -158,8 +187,6 @@ export type EducationItem = {
   title: string
   detail?: string
   credential?: string
-  logo?: string
-  logoAlt?: string
 }
 
 export const education: EducationItem[] = [
@@ -168,9 +195,7 @@ export const education: EducationItem[] = [
     category: 'Graduação',
     title: 'Engenharia da Computação',
     detail: 'Engenheiro da Computação',
-    credential: 'CREA ativo',
-    logo: '/brand/crea-mark.svg',
-    logoAlt: 'Logo do CREA'
+    credential: 'CREA ativo'
   },
   {
     number: '02',
@@ -182,9 +207,8 @@ export const education: EducationItem[] = [
     number: '03',
     category: 'MBA',
     title: 'Gestão de Projetos',
-    detail: 'PUC',
-    logo: '/brand/puc-mark.svg',
-    logoAlt: 'Logo da PUC'
+    detail: 'Pontifícia Universidade Católica',
+    credential: 'PUC'
   },
   {
     number: '04',
