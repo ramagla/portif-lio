@@ -26,7 +26,7 @@ import {
 } from 'react-icons/fa6'
 
 export const contacts = {
-  email: 'rafaelalmeida@outlook.com',
+  email: 'dealmeida.silva@hotmail.com',
   github: 'https://github.com/ramagla',
   linkedin: 'https://www.linkedin.com/in/dealmeidasilva/',
   whatsapp:
@@ -122,7 +122,7 @@ export const technologyGroups: TechnologyGroup[] = [
     number: '02',
     title: 'Infraestrutura & Cloud',
     description:
-      'Ambientes, identidade, conectividade e sustentação corporativa.',
+      'Ambientes, identidade, conectividade, segurança e sustentação corporativa.',
     items: [
       { name: 'AWS', icon: SiAmazonaws },
       { name: 'AWS EC2', icon: SiAmazonaws },
@@ -157,7 +157,8 @@ export const technologyGroups: TechnologyGroup[] = [
   {
     number: '04',
     title: 'Dados & BI',
-    description: 'Bancos de dados, indicadores, análise e suporte à decisão.',
+    description:
+      'Bancos de dados, indicadores, análise e suporte à tomada de decisão.',
     items: [
       { name: 'PostgreSQL', icon: SiPostgresql },
       { name: 'Oracle', icon: SiOracle },
@@ -172,7 +173,7 @@ export const technologyGroups: TechnologyGroup[] = [
     number: '05',
     title: 'Sistemas & Integrações',
     description:
-      'Sistemas corporativos e integração entre aplicações e operação.',
+      'Sistemas corporativos e integração entre aplicações, dados e operação.',
     items: [
       { name: 'Teknisa', icon: FaDiagramProject },
       { name: 'APIs REST', icon: FaCodeBranch },
@@ -187,6 +188,8 @@ export type EducationItem = {
   title: string
   detail?: string
   credential?: string
+  logo?: string
+  logoAlt?: string
 }
 
 export const education: EducationItem[] = [
@@ -195,7 +198,9 @@ export const education: EducationItem[] = [
     category: 'Graduação',
     title: 'Engenharia da Computação',
     detail: 'Engenheiro da Computação',
-    credential: 'CREA ativo'
+    credential: 'CREA ativo',
+    logo: '/brand/crea-logo.png',
+    logoAlt: 'CREA'
   },
   {
     number: '02',
@@ -208,7 +213,8 @@ export const education: EducationItem[] = [
     category: 'MBA',
     title: 'Gestão de Projetos',
     detail: 'Pontifícia Universidade Católica',
-    credential: 'PUC'
+    logo: '/brand/puc-logo.png',
+    logoAlt: 'PUC'
   },
   {
     number: '04',

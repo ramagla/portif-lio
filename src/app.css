@@ -1122,6 +1122,22 @@ a {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .technology-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured-project-copy {
+    padding: 30px;
+  }
+
+  .contact {
+    padding: 68px 60px;
+  }
+
+  .highlights {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .highlight-card {
     border-bottom: 1px solid var(--line);
   }
