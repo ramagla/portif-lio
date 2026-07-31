@@ -1301,3 +1301,668 @@ h2 em {
     transform: none;
   }
 }
+
+/* === RESPONSIVE HARDENING START === */
+
+/*
+ * Responsividade final.
+ * Estes breakpoints complementam as regras anteriores e corrigem
+ * notebook, tablet, mobile e landscape sem depender de overflow-x hidden.
+ */
+
+html,
+body,
+#root {
+  max-width: 100%;
+}
+
+.section,
+.site-header,
+.hero-copy,
+.hero-card,
+.about-inner,
+.experience,
+.education,
+.technology,
+.projects,
+.contact,
+.site-footer,
+.area-card,
+.experience-node,
+.technology-group,
+.technology-item,
+.featured-project,
+.featured-project-copy,
+.secondary-project {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+span,
+a {
+  overflow-wrap: break-word;
+}
+
+/* ----------------------------------------------------------
+   TELAS GRANDES
+   ---------------------------------------------------------- */
+
+@media (min-width: 1600px) {
+  .section,
+  .site-header {
+    width: min(1240px, calc(100% - 80px));
+  }
+
+  .hero {
+    gap: 82px;
+  }
+}
+
+/* ----------------------------------------------------------
+   NOTEBOOKS - 1366 / 1280
+   ---------------------------------------------------------- */
+
+@media (max-width: 1400px) and (min-width: 981px) {
+  .section,
+  .site-header {
+    width: min(1120px, calc(100% - 48px));
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: minmax(0, 1.28fr) minmax(285px, 0.72fr);
+    gap: 48px;
+    padding-top: 38px;
+    padding-bottom: 72px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.35rem, 5.25vw, 4.85rem);
+    max-width: 690px;
+  }
+
+  .hero-description {
+    max-width: 600px;
+  }
+
+  .hero-card {
+    max-width: 340px;
+  }
+
+  .hero-shape--one {
+    width: 205px;
+    height: 205px;
+  }
+
+  .hero-shape--two {
+    width: 88px;
+    height: 88px;
+  }
+
+  .contact {
+    margin-top: 90px;
+    padding: 70px 72px;
+  }
+}
+
+/* ----------------------------------------------------------
+   NOTEBOOK MENOR / TABLET HORIZONTAL
+   ---------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .section,
+  .site-header {
+    width: min(100% - 40px, 980px);
+  }
+
+  .site-header nav {
+    gap: 20px;
+  }
+
+  .hero {
+    gap: 34px;
+    grid-template-columns: minmax(0, 1.18fr) minmax(270px, 0.82fr);
+  }
+
+  .hero h1 {
+    font-size: clamp(3.15rem, 6vw, 4.45rem);
+  }
+
+  .hero-card {
+    max-width: 320px;
+  }
+
+  .areas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .technology-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .secondary-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ----------------------------------------------------------
+   TABLETS - 900 / 820 / 768
+   ---------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .section,
+  .site-header {
+    width: min(100% - 36px, 760px);
+  }
+
+  /* Menu mobile entra antes dos 760px */
+  .site-header {
+    grid-template-columns: 1fr auto;
+    min-height: 76px;
+  }
+
+  .site-header > nav,
+  .header-link {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: relative;
+    justify-self: end;
+    z-index: 30;
+  }
+
+  .mobile-menu summary {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu nav {
+    position: absolute;
+    right: 0;
+    top: 52px;
+    width: min(280px, calc(100vw - 36px));
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: 0 18px 44px rgba(16, 42, 34, 0.18);
+  }
+
+  .mobile-menu nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 46px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+
+  .mobile-menu nav a + a {
+    border-top: 1px solid var(--line);
+  }
+
+  /* Hero deixa de ser desktop espremido */
+  .hero {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 36px;
+    padding: 42px 0 76px;
+  }
+
+  .hero-copy {
+    order: 1;
+    width: 100%;
+  }
+
+  .hero-card {
+    order: 2;
+    align-self: center;
+    width: min(100%, 380px);
+    max-width: 380px;
+  }
+
+  .hero-proof {
+    position: static;
+    order: 3;
+    width: 100%;
+  }
+
+  .hero h1 {
+    max-width: 720px;
+    font-size: clamp(3.2rem, 9vw, 5rem);
+  }
+
+  .hero-description {
+    max-width: 680px;
+  }
+
+  .hero-shape--one {
+    width: 170px;
+    height: 170px;
+    right: -35px;
+    top: 30%;
+  }
+
+  .hero-shape--two {
+    width: 74px;
+    height: 74px;
+    right: 8%;
+    bottom: 20%;
+  }
+
+  .highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-inner,
+  .experience {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .areas-grid,
+  .technology-groups,
+  .education-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience-map {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-project {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-project > .project-visual {
+    min-height: 320px;
+  }
+
+  .secondary-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact {
+    width: min(100% - 36px, 760px);
+    padding: 60px 42px;
+  }
+}
+
+/* ----------------------------------------------------------
+   CELULARES GRANDES - 600px
+   ---------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .section,
+  .site-header {
+    width: calc(100% - 28px);
+  }
+
+  .site-header {
+    min-height: 70px;
+  }
+
+  .brand-lockup img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero {
+    gap: 28px;
+    padding: 32px 0 62px;
+  }
+
+  .hero-name {
+    margin-top: 18px;
+    font-size: 0.75rem;
+  }
+
+  .hero h1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: clamp(2.7rem, 12vw, 4rem);
+    line-height: 0.96;
+    letter-spacing: -0.065em;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+  }
+
+  .hero-card {
+    width: min(100%, 330px);
+    border-width: 5px;
+    border-radius: 22px;
+  }
+
+  .hero-proof {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-proof span {
+    min-height: 46px;
+  }
+
+  .highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-card,
+  .highlight-card:nth-child(n) {
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .highlight-card:last-child {
+    border-bottom: 0;
+  }
+
+  .about {
+    margin-top: 58px;
+    padding: 64px 0;
+  }
+
+  .areas {
+    padding: 64px 0;
+  }
+
+  .areas-grid,
+  .education-grid,
+  .technology-groups,
+  .secondary-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .area-card {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .area-card h3 {
+    margin-top: 25px;
+  }
+
+  .experience {
+    padding-bottom: 64px;
+  }
+
+  .experience-node {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .education {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .education-grid {
+    margin-top: 32px;
+  }
+
+  .education-card {
+    min-height: 0;
+    padding: 23px;
+  }
+
+  .education-card-top {
+    margin-bottom: 30px;
+  }
+
+  .technology {
+    padding: 64px 0;
+  }
+
+  .technology-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .technology-item {
+    min-width: 0;
+  }
+
+  .technology-item span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .projects {
+    padding: 64px 0;
+  }
+
+  .featured-project > .project-visual,
+  .secondary-project .project-visual {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .featured-project-copy {
+    padding: 24px 20px;
+  }
+
+  .featured-project h3 {
+    font-size: clamp(1.9rem, 9vw, 2.5rem);
+  }
+
+  .project-tags {
+    gap: 7px;
+  }
+
+  .contact {
+    width: calc(100% - 28px);
+    margin-top: 60px;
+    padding: 48px 22px;
+    border-radius: 20px;
+  }
+
+  .contact h2 {
+    font-size: clamp(2.55rem, 12vw, 3.5rem);
+  }
+
+  .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-actions .button {
+    width: 100%;
+  }
+
+  .contact-email {
+    width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .site-footer > div {
+    justify-content: flex-start;
+  }
+
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    right: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ----------------------------------------------------------
+   CELULARES PEQUENOS - 430 / 390 / 360
+   ---------------------------------------------------------- */
+
+@media (max-width: 430px) {
+  .section,
+  .site-header {
+    width: calc(100% - 24px);
+  }
+
+  .eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.105em;
+  }
+
+  .hero {
+    padding-top: 26px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.55rem, 12.8vw, 3.45rem);
+  }
+
+  .hero-card {
+    width: min(100%, 310px);
+  }
+
+  .hero-shape {
+    display: none;
+  }
+
+  .technology-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .technology-item {
+    min-height: 56px;
+    padding: 9px;
+    gap: 7px;
+    font-size: 0.72rem;
+  }
+
+  .technology-item svg,
+  .technology-item img {
+    flex: 0 0 auto;
+    width: 21px;
+    height: 21px;
+  }
+
+  .education-card h3 {
+    font-size: 1.55rem;
+  }
+
+  .contact {
+    width: calc(100% - 24px);
+    padding: 42px 18px;
+  }
+
+  .contact-mark {
+    display: none;
+  }
+}
+
+@media (max-width: 370px) {
+  .technology-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .button {
+    font-size: 0.79rem;
+  }
+}
+
+/* ----------------------------------------------------------
+   MOBILE LANDSCAPE - ex.: 844x390
+   ---------------------------------------------------------- */
+
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  .site-header {
+    min-height: 62px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(210px, 0.8fr);
+    align-items: center;
+    gap: 28px;
+    padding: 22px 0 48px;
+  }
+
+  .hero-copy,
+  .hero-card {
+    order: initial;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.45rem, 6vw, 3.5rem);
+  }
+
+  .hero-description {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 235px;
+    justify-self: end;
+  }
+
+  .hero-proof {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-shape {
+    display: none;
+  }
+}
+
+/* ----------------------------------------------------------
+   ZOOM / ACESSIBILIDADE
+   ---------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .button,
+  .mobile-menu summary,
+  .mobile-menu nav a {
+    min-height: 44px;
+  }
+}
+
+/* === RESPONSIVE HARDENING END === */
