@@ -2,108 +2,68 @@ import { Analytics } from '@vercel/analytics/react'
 import {
   FaArrowDown,
   FaArrowUpRightFromSquare,
+  FaBars,
+  FaCloud,
+  FaCode,
+  FaDatabase,
+  FaDiagramProject,
   FaEnvelope,
   FaGithub,
   FaLinkedinIn,
+  FaNetworkWired,
+  FaServer,
+  FaShieldHalved,
+  FaUsersGear,
   FaWhatsapp
 } from 'react-icons/fa6'
 import {
-  SiAmazonaws,
-  SiCss3,
-  SiDjango,
-  SiDocker,
-  SiGit,
-  SiHtml5,
-  SiJavascript,
-  SiMicrosoftsqlserver,
-  SiOracle,
-  SiPostgresql,
-  SiPowerbi,
-  SiPython,
-  SiReact,
-  SiTypescript,
-  SiVercel
-} from 'react-icons/si'
+  areas,
+  contacts,
+  highlights,
+  projects,
+  technologyGroups
+} from './data/portfolio'
 import './app.css'
 
-type Project = {
-  title: string
-  eyebrow: string
-  description: string
-  tags: string[]
-  href: string
-  image: string
-  liveUrl?: string
-  tone: 'blue' | 'green' | 'purple' | 'coral'
-  number: string
-  imageFit?: 'cover' | 'contain'
-}
-
-const projects: Project[] = [
-  {
-    title: 'Portal de Gestão',
-    eyebrow: 'Produto corporativo',
-    description:
-      'Portal operacional que conecta indicadores, rotinas de DP e módulos internos em uma experiência única, segura e instalável.',
-    tags: ['Django', 'React', 'Oracle', 'PWA'],
-    href: 'https://github.com/ramagla/Projeto_BI',
-    image: '/projects/portal-gestao.webp',
-    tone: 'blue',
-    number: '01'
-  },
-  {
-    title: 'SIB',
-    eyebrow: 'Presença digital',
-    description:
-      'Landing page institucional criada para apresentar o negócio com clareza, fortalecer a marca e transformar visitas em contatos.',
-    tags: ['React', 'UX/UI', 'Responsivo'],
-    href: 'https://github.com/ramagla/landpage_sib',
-    image: '/projects/sib-logo.webp',
-    tone: 'green',
-    number: '02',
-    imageFit: 'contain'
-  },
-  {
-    title: 'Romeu Beauty',
-    eyebrow: 'Landing page',
-    description:
-      'Experiência elegante para um profissional de beleza, com serviços, portfólio, prova social e conversão direta pelo WhatsApp.',
-    tags: ['React', 'Vite', 'Tailwind', 'SEO'],
-    href: 'https://github.com/ramagla/landpage_romeu',
-    liveUrl: 'https://www.romeuferrazin.com.br',
-    image: '/projects/romeu-beauty.webp',
-    tone: 'purple',
-    number: '03'
-  },
-  {
-    title: 'Duda 16',
-    eyebrow: 'Convite digital',
-    description:
-      'Convite interativo com validação de convidados, RSVP, mensagens, check-in e painel administrativo para gestão do evento.',
-    tags: ['React', 'APIs', 'SQLite', 'Vercel'],
-    href: 'https://github.com/ramagla/landpage_duda',
-    liveUrl: 'https://www.dudanoibiza.com.br',
-    image: '/projects/duda-16.webp',
-    tone: 'coral',
-    number: '04'
-  }
+const areaIcons = [
+  FaUsersGear,
+  FaCloud,
+  FaDiagramProject,
+  FaCode,
+  FaDatabase,
+  FaNetworkWired
 ]
 
-const capabilities = [
+const experienceAreas = [
   {
-    number: '01',
-    title: 'Transformo processos em produtos',
-    text: 'Entendo a operação, organizo requisitos e construo soluções digitais que simplificam o trabalho real.'
+    title: 'Gestão',
+    text: 'Projetos, equipes, fornecedores e prioridades',
+    icon: FaUsersGear
   },
   {
-    number: '02',
-    title: 'Uno negócio e tecnologia',
-    text: 'Experiência com projetos de TI, gestão, dados e desenvolvimento full stack para tomar decisões mais completas.'
+    title: 'Infraestrutura',
+    text: 'Servidores, redes, cloud e ambientes corporativos',
+    icon: FaServer
   },
   {
-    number: '03',
-    title: 'Entrego com visão de ponta a ponta',
-    text: 'Da descoberta ao deploy: interface, integrações, automações, indicadores e evolução contínua do produto.'
+    title: 'Sistemas',
+    text: 'Aplicações, integrações e processos de negócio',
+    icon: FaDiagramProject
+  },
+  {
+    title: 'Automação',
+    text: 'Python, PowerShell, APIs e Power Automate',
+    icon: FaCode
+  },
+  {
+    title: 'Dados',
+    text: 'Oracle, PostgreSQL, SQL, BI e indicadores',
+    icon: FaDatabase
+  },
+  {
+    title: 'Desenvolvimento',
+    text: 'Sistemas internos e soluções digitais',
+    icon: FaShieldHalved
   }
 ]
 
@@ -119,20 +79,33 @@ function Brand() {
   )
 }
 
-function ProjectVisual({ project }: { project: Project }) {
+function ExternalIcon() {
+  return <FaArrowUpRightFromSquare aria-hidden="true" />
+}
+
+function ProjectVisual({
+  image,
+  title,
+  fit = 'cover'
+}: {
+  image: string
+  title: string
+  fit?: 'cover' | 'contain'
+}) {
   return (
-    <div className={`project-visual project-visual--${project.tone}`}>
+    <div className="project-visual">
       <div className="project-browser-bar" aria-hidden="true">
         <span />
         <span />
         <span />
-        <small>Projeto real · {project.number}</small>
       </div>
       <img
-        className={`project-image project-image--${project.imageFit ?? 'cover'}`}
-        src={project.image}
-        alt={`Imagem real do projeto ${project.title}`}
+        className={`project-image project-image--${fit}`}
+        src={image}
+        alt={`Imagem do projeto ${title}`}
         loading="lazy"
+        width="920"
+        height="600"
       />
     </div>
   )
@@ -147,259 +120,361 @@ function App() {
           <Brand />
         </a>
         <nav aria-label="Navegação principal">
-          <a href="#sobre">Sobre</a>
-          <a href="#projetos">Projetos</a>
+          <a href="#sobre">Visão</a>
+          <a href="#atuacao">Atuação</a>
+          <a href="#projetos">Cases</a>
           <a href="#contato">Contato</a>
         </nav>
         <a
           className="header-link"
-          href="https://github.com/ramagla"
+          href={contacts.github}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
-          GitHub <FaArrowUpRightFromSquare />
+          GitHub <ExternalIcon />
         </a>
+        <details className="mobile-menu">
+          <summary aria-label="Abrir navegação">
+            <FaBars aria-hidden="true" />
+          </summary>
+          <nav aria-label="Navegação mobile">
+            <a href="#sobre">Visão</a>
+            <a href="#atuacao">Atuação</a>
+            <a href="#projetos">Cases</a>
+            <a href="#contato">Contato</a>
+            <a
+              href={contacts.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn <ExternalIcon />
+            </a>
+            <a href={contacts.github} target="_blank" rel="noopener noreferrer">
+              GitHub <ExternalIcon />
+            </a>
+          </nav>
+        </details>
       </header>
 
       <main>
         <section className="hero section" id="inicio">
           <div className="hero-shape hero-shape--one" aria-hidden="true" />
           <div className="hero-shape hero-shape--two" aria-hidden="true" />
-
           <div className="hero-copy">
             <p className="eyebrow">
-              <span />
-              Gestão de projetos & desenvolvimento
+              <span /> Coordenador de TI · Gestão · Infraestrutura · Sistemas ·
+              Automação
             </p>
+            <p className="hero-name">Rafael Almeida</p>
             <h1>
-              Transformo desafios de negócio em <em>soluções digitais.</em>
+              Tecnologia com <em>visão de negócio.</em>
             </h1>
             <p className="hero-description">
-              Sou Rafael Almeida. Conecto visão de gestão, dados e tecnologia
-              para criar produtos úteis, claros e prontos para evoluir.
+              Coordenador de TI com 18+ anos de experiência, conectando gestão,
+              infraestrutura, sistemas, dados, automação e desenvolvimento para
+              conduzir soluções de ponta a ponta.
             </p>
             <div className="hero-actions">
               <a className="button button--primary" href="#projetos">
                 Ver projetos <FaArrowDown />
               </a>
               <a
-                className="button button--ghost"
-                href="https://www.linkedin.com/in/dealmeidasilva/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLinkedinIn /> LinkedIn
-              </a>
-              <a
                 className="button button--whatsapp"
-                href="https://wa.me/5511920850975?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio."
+                href={contacts.whatsapp}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 <FaWhatsapp /> WhatsApp
               </a>
+              <a
+                className="button button--ghost"
+                href={contacts.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedinIn /> LinkedIn
+              </a>
             </div>
           </div>
 
-          <div className="hero-card">
+          <aside
+            className="hero-card"
+            aria-label="Apresentação profissional de Rafael Almeida"
+          >
             <div className="portrait-frame">
               <img
                 src="/brand/rafael-professional.webp"
-                alt="Rafael Almeida"
-                width="360"
-                height="360"
+                alt="Rafael Almeida, Coordenador de TI"
+                width="420"
+                height="525"
               />
             </div>
             <div className="hero-card-caption">
-              <span>Brasil</span>
-              <strong>
-                <i aria-hidden="true" />
-                Disponível para novos projetos
-              </strong>
+              <div>
+                <span>Rafael Almeida</span>
+                <strong>Coordenador de TI</strong>
+              </div>
+              <small>
+                São Paulo · Brasil
+                <br />
+                18+ anos em Tecnologia
+              </small>
             </div>
-          </div>
+          </aside>
 
-          <div className="hero-proof">
-            <span>Produtos digitais</span>
-            <span>Portais corporativos</span>
-            <span>Automação & dados</span>
+          <div
+            className="hero-proof"
+            aria-label="Áreas centrais de experiência"
+          >
+            <span>
+              <b>18+</b> anos em tecnologia
+            </span>
+            <span>
+              Gestão <i /> Tecnologia
+            </span>
+            <span>Soluções de ponta a ponta</span>
           </div>
+        </section>
+
+        <section
+          className="highlights section"
+          aria-label="Destaques profissionais"
+        >
+          {highlights.map(({ value, label, detail }) => (
+            <article key={label} className="highlight-card">
+              <strong>{value}</strong>
+              <span>{label}</span>
+              <p>{detail}</p>
+            </article>
+          ))}
         </section>
 
         <section className="about" id="sobre">
           <div className="section about-inner">
             <div className="section-heading">
-              <p className="eyebrow">Sobre mim</p>
+              <p className="eyebrow">Sobre</p>
               <h2>
-                Estratégia na cabeça.
-                <br />
-                <em>Código nas mãos.</em>
+                Tecnologia que aproxima <em>estratégia e execução.</em>
               </h2>
             </div>
-            <div className="experience-band">
-              <strong>
-                18<sup>+</sup>
-              </strong>
-              <div>
-                <span>anos de experiência</span>
-                <p>
-                  Gestão, processos, tecnologia e melhoria contínua conectados
-                  para gerar resultado.
-                </p>
-              </div>
-            </div>
-            <div className="about-intro">
+            <div className="about-copy">
               <p className="about-lead">
-                Minha experiência une gestão de projetos de TI e desenvolvimento
-                full stack para resolver problemas com visão prática.
+                Minha atuação reúne gestão de TI, infraestrutura, sistemas
+                corporativos, processos, automação, dados e desenvolvimento.
               </p>
               <p>
-                Entro no contexto, entendo pessoas e processos e traduzo tudo em
-                uma solução simples de usar. Trabalho com aplicações web,
-                portais corporativos, automações, dados e experiências digitais
-                para negócios.
+                Estruturo necessidades da operação, organizo o caminho do
+                projeto e participo tecnicamente da construção quando necessário
+                — da arquitetura e integração ao ambiente, deploy, monitoramento
+                e evolução da solução.
               </p>
             </div>
-            <div className="capabilities">
-              {capabilities.map((capability) => (
-                <article key={capability.number}>
-                  <span>{capability.number}</span>
-                  <h3>{capability.title}</h3>
-                  <p>{capability.text}</p>
+          </div>
+        </section>
+
+        <section className="areas section" id="atuacao">
+          <div className="section-heading section-heading--row">
+            <div>
+              <p className="eyebrow">Áreas de atuação</p>
+              <h2>
+                Amplitude para conduzir <em>TI na prática.</em>
+              </h2>
+            </div>
+            <p>
+              Visão executiva sem perder proximidade com a operação e a
+              tecnologia.
+            </p>
+          </div>
+          <div className="areas-grid">
+            {areas.map((area, index) => {
+              const Icon = areaIcons[index]
+              return (
+                <article className="area-card" key={area.title}>
+                  <div className="area-card-top">
+                    <span>{area.number}</span>
+                    <Icon aria-hidden="true" />
+                  </div>
+                  <h3>{area.title}</h3>
+                  <p>{area.text}</p>
+                </article>
+              )
+            })}
+          </div>
+        </section>
+
+        <section
+          className="experience section"
+          aria-labelledby="experiencia-title"
+        >
+          <div className="experience-intro">
+            <p className="eyebrow">18+ anos em Tecnologia</p>
+            <h2 id="experiencia-title">
+              Experiência que conecta operação, <em>gestão e tecnologia.</em>
+            </h2>
+            <p>
+              Uma atuação ampla, construída em ambientes corporativos e produtos
+              digitais — sem transformar o portfólio em currículo.
+            </p>
+          </div>
+          <div className="experience-map">
+            {experienceAreas.map(({ title, text, icon: MapIcon }, index) => {
+              return (
+                <article key={title as string} className="experience-node">
+                  <span>0{index + 1}</span>
+                  <MapIcon aria-hidden="true" />
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        </section>
+
+        <section className="technology" id="tecnologias">
+          <div className="section">
+            <div className="section-heading section-heading--row">
+              <div>
+                <p className="eyebrow">Ecossistema de tecnologias</p>
+                <h2>
+                  Ferramentas aplicadas <em>com contexto.</em>
+                </h2>
+              </div>
+              <p>
+                Seleção organizada por área de uso, não uma lista genérica de
+                frameworks.
+              </p>
+            </div>
+            <div className="technology-groups">
+              {technologyGroups.map((group) => (
+                <article className="technology-group" key={group.title}>
+                  <div className="technology-group-heading">
+                    <span>{group.number}</span>
+                    <div>
+                      <h3>{group.title}</h3>
+                      <p>{group.description}</p>
+                    </div>
+                  </div>
+                  <div className="technology-list">
+                    {group.items.map(({ name, icon: Icon, image }) => (
+                      <div className="technology-item" key={name} title={name}>
+                        {image ? (
+                          <img
+                            src={image}
+                            alt=""
+                            width="27"
+                            height="27"
+                            loading="lazy"
+                          />
+                        ) : (
+                          Icon && <Icon aria-hidden="true" />
+                        )}
+                        <span>{name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </article>
               ))}
-            </div>
-            <div className="stack">
-              <div className="stack-heading">
-                <span>Trabalho com</span>
-                <h3>Ferramentas que fazem parte do meu dia a dia.</h3>
-              </div>
-              <div className="tool-grid">
-                <article>
-                  <SiPython />
-                  <span>Python</span>
-                </article>
-                <article>
-                  <SiDjango />
-                  <span>Django</span>
-                </article>
-                <article>
-                  <SiReact />
-                  <span>React</span>
-                </article>
-                <article>
-                  <SiTypescript />
-                  <span>TypeScript</span>
-                </article>
-                <article>
-                  <SiJavascript />
-                  <span>JavaScript</span>
-                </article>
-                <article>
-                  <SiHtml5 />
-                  <span>HTML5</span>
-                </article>
-                <article>
-                  <SiCss3 />
-                  <span>CSS3</span>
-                </article>
-                <article>
-                  <SiPowerbi />
-                  <span>Power BI</span>
-                </article>
-                <article className="tool-bizagi">
-                  <img src="/brand/bizagi.webp" alt="" />
-                  <span>Bizagi</span>
-                </article>
-                <article>
-                  <SiAmazonaws />
-                  <span>AWS</span>
-                </article>
-                <article>
-                  <SiOracle />
-                  <span>Oracle</span>
-                </article>
-                <article>
-                  <SiPostgresql />
-                  <span>PostgreSQL</span>
-                </article>
-                <article>
-                  <SiMicrosoftsqlserver />
-                  <span>SQL Server</span>
-                </article>
-                <article>
-                  <SiDocker />
-                  <span>Docker</span>
-                </article>
-                <article>
-                  <SiGit />
-                  <span>Git</span>
-                </article>
-                <article>
-                  <SiVercel />
-                  <span>Vercel</span>
-                </article>
-              </div>
             </div>
           </div>
         </section>
 
         <section className="projects" id="projetos">
-          <div className="section projects-inner">
-            <div className="section-heading section-heading--projects">
+          <div className="section">
+            <div className="projects-heading">
               <div>
-                <p className="eyebrow">Projetos selecionados</p>
-                <h2>Trabalho real. Resultado visível.</h2>
+                <p className="eyebrow">Projetos & cases</p>
+                <h2>
+                  Da necessidade ao <em>produto em uso.</em>
+                </h2>
               </div>
               <p>
-                Produtos digitais, sistemas de gestão e experiências construídas
-                para contextos reais.
+                Trabalhos que mostram diferentes frentes da minha atuação, com o
+                Portal de Gestão como principal case corporativo.
               </p>
             </div>
-
-            <div className="project-list">
-              {projects.map((project) => (
-                <article className="project-card" key={project.title}>
-                  <ProjectVisual project={project} />
-                  <div className="project-copy">
-                    <span className="project-number">
-                      Projeto {project.number}
-                    </span>
-                    <p className="project-eyebrow">{project.eyebrow}</p>
+            <article className="featured-project">
+              <ProjectVisual
+                image={projects[0].image}
+                title={projects[0].title}
+              />
+              <div className="featured-project-copy">
+                <p className="project-kicker">
+                  Case principal · Produto corporativo
+                </p>
+                <h3>{projects[0].title}</h3>
+                <p>{projects[0].description}</p>
+                <dl>
+                  <div>
+                    <dt>Desafio</dt>
+                    <dd>
+                      Centralizar processos antes distribuídos entre planilhas,
+                      sistemas e rotinas manuais.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Atuação</dt>
+                    <dd>
+                      Gestão do projeto, requisitos, arquitetura, backend,
+                      dados, integrações, infraestrutura e evolução.
+                    </dd>
+                  </div>
+                </dl>
+                <div className="project-tags">
+                  {projects[0].tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                <a
+                  className="text-link"
+                  href={projects[0].href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver código do projeto <ExternalIcon />
+                </a>
+              </div>
+            </article>
+            <div className="secondary-projects">
+              {projects.slice(1).map((project) => (
+                <article className="secondary-project" key={project.title}>
+                  <ProjectVisual
+                    image={project.image}
+                    title={project.title}
+                    fit={project.imageFit}
+                  />
+                  <div>
+                    <p className="project-kicker">{project.eyebrow}</p>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
-                    <ul aria-label={`Tecnologias do projeto ${project.title}`}>
+                    <div className="project-tags">
                       {project.tags.map((tag) => (
-                        <li key={tag}>{tag}</li>
+                        <span key={tag}>{tag}</span>
                       ))}
-                    </ul>
-                    <div className="project-links">
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Ver projeto <FaArrowUpRightFromSquare />
-                        </a>
-                      )}
-                      <a href={project.href} target="_blank" rel="noreferrer">
-                        <FaGithub /> Código
-                      </a>
                     </div>
+                  </div>
+                  <div className="secondary-project-links">
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Código <FaGithub />
+                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visitar <ExternalIcon />
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}
             </div>
-
-            <a
-              className="all-projects"
-              href="https://github.com/ramagla?tab=repositories"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Ver todos os projetos no GitHub <FaArrowUpRightFromSquare />
-            </a>
           </div>
         </section>
 
@@ -407,71 +482,65 @@ function App() {
           <div className="contact-mark" aria-hidden="true">
             RA
           </div>
-          <p className="eyebrow">Vamos conversar</p>
-          <h2>
-            Tem um projeto em mente?
-            <br />
-            <em>Vamos tirar do papel.</em>
-          </h2>
-          <p>
-            Estou aberto a projetos e parcerias em que gestão e tecnologia
-            precisem trabalhar juntas.
-          </p>
+          <div className="contact-copy">
+            <p className="eyebrow">Contato</p>
+            <h2>
+              Tem um projeto ou necessidade de TI? <em>Vamos conversar.</em>
+            </h2>
+            <p>
+              Estou disponível para conversar sobre projetos, tecnologia,
+              processos e oportunidades de colaboração.
+            </p>
+          </div>
           <div className="contact-actions">
             <a
-              className="button button--whatsapp-solid"
-              href="https://wa.me/5511920850975?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio."
+              className="button button--lime"
+              href={contacts.whatsapp}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <FaWhatsapp /> Chamar no WhatsApp
             </a>
             <a
-              className="button button--light"
-              href="mailto:ramagla1@gmail.com"
-            >
-              <FaEnvelope /> Enviar e-mail
-            </a>
-            <a
-              className="button button--outline"
-              href="https://www.linkedin.com/in/dealmeidasilva/"
+              className="button button--outline-light"
+              href={contacts.linkedin}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <FaLinkedinIn /> Conectar no LinkedIn
+            </a>
+            <a className="contact-email" href={`mailto:${contacts.email}`}>
+              <FaEnvelope /> {contacts.email}
             </a>
           </div>
         </section>
       </main>
 
-      <footer className="section">
-        <a href="#inicio">
-          <Brand />
-        </a>
-        <p>© {new Date().getFullYear()} Rafael Almeida</p>
+      <footer className="site-footer section">
+        <Brand />
+        <p>Coordenador de TI · Gestão, infraestrutura, sistemas e automação.</p>
         <div>
-          <a href="https://github.com/ramagla" target="_blank" rel="noreferrer">
+          <a href={contacts.github} target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
-          <a
-            href="https://www.linkedin.com/in/dealmeidasilva/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={contacts.linkedin} target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
+          <a href={contacts.whatsapp} target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+          <a href={`mailto:${contacts.email}`}>E-mail</a>
         </div>
+        <small>© {new Date().getFullYear()} Rafael Almeida</small>
       </footer>
-
       <a
         className="whatsapp-float"
-        href="https://wa.me/5511920850975?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio."
+        href={contacts.whatsapp}
         target="_blank"
-        rel="noreferrer"
-        aria-label="Conversar com Rafael pelo WhatsApp"
+        rel="noopener noreferrer"
+        aria-label="Conversar com Rafael Almeida pelo WhatsApp"
       >
         <FaWhatsapp />
-        <span>WhatsApp</span>
       </a>
     </>
   )
