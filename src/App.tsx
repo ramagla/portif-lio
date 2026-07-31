@@ -23,6 +23,7 @@ import {
   projects,
   technologyGroups
 } from './data/portfolio'
+import { education } from './data/portfolio'
 import './app.css'
 
 const areaIcons = [
@@ -329,6 +330,52 @@ function App() {
                 </article>
               )
             })}
+          </div>
+        </section>
+
+        <section
+          className="education section"
+          id="formacao"
+          aria-labelledby="formacao-title"
+        >
+          <div className="section-heading section-heading--row">
+            <div>
+              <p className="eyebrow">Formação & credenciais</p>
+              <h2 id="formacao-title">
+                Formação acadêmica que complementa a{' '}
+                <em>experiência prática.</em>
+              </h2>
+            </div>
+            <p>
+              Engenharia, gestão de projetos e perícia forense computacional
+              como bases complementares da minha atuação em Tecnologia da
+              Informação.
+            </p>
+          </div>
+
+          <div className="education-grid">
+            {education.map((item) => (
+              <article className="education-card" key={item.title}>
+                <div className="education-card-top">
+                  <span className="education-number">{item.number}</span>
+                  <span className="education-category">{item.category}</span>
+                </div>
+
+                <div className="education-card-content">
+                  <h3>{item.title}</h3>
+
+                  {item.detail && (
+                    <p className="education-detail">{item.detail}</p>
+                  )}
+                </div>
+
+                {item.credential && (
+                  <span className="education-credential">
+                    {item.credential}
+                  </span>
+                )}
+              </article>
+            ))}
           </div>
         </section>
 

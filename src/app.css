@@ -489,6 +489,110 @@ h2 em {
   font-size: 0.77rem;
   line-height: 1.5;
 }
+
+/* ==========================================================
+   Formação & Credenciais
+   ========================================================== */
+
+.education {
+  padding-bottom: clamp(88px, 9vw, 138px);
+  padding-top: clamp(88px, 9vw, 138px);
+}
+
+.education-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  margin-top: clamp(38px, 5vw, 64px);
+}
+
+.education-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  overflow: hidden;
+  padding: clamp(24px, 3vw, 32px);
+  position: relative;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.education-card::before {
+  background: var(--accent);
+  content: '';
+  height: 4px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.education-card:hover {
+  box-shadow: 0 18px 38px rgba(16, 42, 34, 0.1);
+  transform: translateY(-4px);
+}
+
+.education-card-top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 44px;
+}
+
+.education-number {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.education-category {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 7px 11px;
+  text-transform: uppercase;
+}
+
+.education-card-content {
+  flex: 1;
+}
+
+.education-card h3 {
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.education-detail {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-top: 14px;
+}
+
+.education-credential {
+  align-self: flex-start;
+  background: var(--lime);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  margin-top: 28px;
+  padding: 9px 13px;
+  text-transform: uppercase;
+}
+
 .technology {
   padding: 104px 0 112px;
   background: #eee8da;

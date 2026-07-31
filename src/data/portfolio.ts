@@ -152,6 +152,35 @@ export const technologyGroups: TechnologyGroup[] = [
   }
 ]
 
+export type EducationItem = {
+  number: string
+  category: string
+  title: string
+  detail?: string
+  credential?: string
+}
+
+export const education: EducationItem[] = [
+  {
+    number: '01',
+    category: 'Graduação',
+    title: 'Engenharia da Computação',
+    detail: 'Engenheiro da Computação',
+    credential: 'CREA ativo'
+  },
+  {
+    number: '02',
+    category: 'MBA',
+    title: 'Gestão de Projetos',
+    detail: 'PUC'
+  },
+  {
+    number: '03',
+    category: 'Pós-graduação',
+    title: 'Perícia Forense Computacional'
+  }
+]
+
 export const projects = [
   {
     title: 'Portal de Gestão',
