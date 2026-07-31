@@ -4,8 +4,26 @@ import {
   FaArrowUpRightFromSquare,
   FaEnvelope,
   FaGithub,
-  FaLinkedinIn
+  FaLinkedinIn,
+  FaWhatsapp
 } from 'react-icons/fa6'
+import {
+  SiAmazonaws,
+  SiCss3,
+  SiDjango,
+  SiDocker,
+  SiGit,
+  SiHtml5,
+  SiJavascript,
+  SiMicrosoftsqlserver,
+  SiOracle,
+  SiPostgresql,
+  SiPowerbi,
+  SiPython,
+  SiReact,
+  SiTypescript,
+  SiVercel
+} from 'react-icons/si'
 import './app.css'
 
 type Project = {
@@ -172,13 +190,21 @@ function App() {
               >
                 <FaLinkedinIn /> LinkedIn
               </a>
+              <a
+                className="button button--whatsapp"
+                href="https://wa.me/5511920850975?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio."
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaWhatsapp /> WhatsApp
+              </a>
             </div>
           </div>
 
           <div className="hero-card">
             <div className="portrait-frame">
               <img
-                src="/brand/rafael-avatar.webp"
+                src="/brand/rafael-professional.webp"
                 alt="Rafael Almeida"
                 width="360"
                 height="360"
@@ -210,6 +236,18 @@ function App() {
                 <em>Código nas mãos.</em>
               </h2>
             </div>
+            <div className="experience-band">
+              <strong>
+                18<sup>+</sup>
+              </strong>
+              <div>
+                <span>anos de experiência</span>
+                <p>
+                  Gestão, processos, tecnologia e melhoria contínua conectados
+                  para gerar resultado.
+                </p>
+              </div>
+            </div>
             <div className="about-intro">
               <p className="about-lead">
                 Minha experiência une gestão de projetos de TI e desenvolvimento
@@ -232,15 +270,75 @@ function App() {
               ))}
             </div>
             <div className="stack">
-              <span>Trabalho com</span>
-              <div>
-                <strong>Python</strong>
-                <strong>Django</strong>
-                <strong>React</strong>
-                <strong>TypeScript</strong>
-                <strong>Power BI</strong>
-                <strong>SQL</strong>
-                <strong>AWS</strong>
+              <div className="stack-heading">
+                <span>Trabalho com</span>
+                <h3>Ferramentas que fazem parte do meu dia a dia.</h3>
+              </div>
+              <div className="tool-grid">
+                <article>
+                  <SiPython />
+                  <span>Python</span>
+                </article>
+                <article>
+                  <SiDjango />
+                  <span>Django</span>
+                </article>
+                <article>
+                  <SiReact />
+                  <span>React</span>
+                </article>
+                <article>
+                  <SiTypescript />
+                  <span>TypeScript</span>
+                </article>
+                <article>
+                  <SiJavascript />
+                  <span>JavaScript</span>
+                </article>
+                <article>
+                  <SiHtml5 />
+                  <span>HTML5</span>
+                </article>
+                <article>
+                  <SiCss3 />
+                  <span>CSS3</span>
+                </article>
+                <article>
+                  <SiPowerbi />
+                  <span>Power BI</span>
+                </article>
+                <article className="tool-bizagi">
+                  <img src="/brand/bizagi.webp" alt="" />
+                  <span>Bizagi</span>
+                </article>
+                <article>
+                  <SiAmazonaws />
+                  <span>AWS</span>
+                </article>
+                <article>
+                  <SiOracle />
+                  <span>Oracle</span>
+                </article>
+                <article>
+                  <SiPostgresql />
+                  <span>PostgreSQL</span>
+                </article>
+                <article>
+                  <SiMicrosoftsqlserver />
+                  <span>SQL Server</span>
+                </article>
+                <article>
+                  <SiDocker />
+                  <span>Docker</span>
+                </article>
+                <article>
+                  <SiGit />
+                  <span>Git</span>
+                </article>
+                <article>
+                  <SiVercel />
+                  <span>Vercel</span>
+                </article>
               </div>
             </div>
           </div>
@@ -321,6 +419,14 @@ function App() {
           </p>
           <div className="contact-actions">
             <a
+              className="button button--whatsapp-solid"
+              href="https://wa.me/5511920850975?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio."
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaWhatsapp /> Chamar no WhatsApp
+            </a>
+            <a
               className="button button--light"
               href="mailto:ramagla1@gmail.com"
             >
@@ -356,6 +462,17 @@ function App() {
           </a>
         </div>
       </footer>
+
+      <a
+        className="whatsapp-float"
+        href="https://wa.me/5511920850975?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio."
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Conversar com Rafael pelo WhatsApp"
+      >
+        <FaWhatsapp />
+        <span>WhatsApp</span>
+      </a>
     </>
   )
 }

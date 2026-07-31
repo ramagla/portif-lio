@@ -31,3 +31,9 @@ npm run build
 - CSS
 - React Icons
 - Vercel Analytics
+
+## Créditos de marca
+
+O logotipo Bizagi utilizado na seção de ferramentas é de ClaireBizagi,
+disponibilizado no Wikimedia Commons sob licença
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
