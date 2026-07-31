@@ -158,6 +158,8 @@ export type EducationItem = {
   title: string
   detail?: string
   credential?: string
+  logo?: string
+  logoAlt?: string
 }
 
 export const education: EducationItem[] = [
@@ -166,16 +168,26 @@ export const education: EducationItem[] = [
     category: 'Graduação',
     title: 'Engenharia da Computação',
     detail: 'Engenheiro da Computação',
-    credential: 'CREA ativo'
+    credential: 'CREA ativo',
+    logo: '/brand/crea-mark.svg',
+    logoAlt: 'Logo do CREA'
   },
   {
     number: '02',
-    category: 'MBA',
-    title: 'Gestão de Projetos',
-    detail: 'PUC'
+    category: 'Tecnólogo',
+    title: 'Redes de Computadores',
+    detail: 'Tecnólogo em Redes de Computadores'
   },
   {
     number: '03',
+    category: 'MBA',
+    title: 'Gestão de Projetos',
+    detail: 'PUC',
+    logo: '/brand/puc-mark.svg',
+    logoAlt: 'Logo da PUC'
+  },
+  {
+    number: '04',
     category: 'Pós-graduação',
     title: 'Perícia Forense Computacional'
   }

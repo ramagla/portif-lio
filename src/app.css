@@ -580,6 +580,32 @@ h2 em {
   margin-top: 14px;
 }
 
+.education-meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.education-brand {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  display: inline-flex;
+  height: 56px;
+  justify-content: center;
+  padding: 10px 14px;
+}
+
+.education-brand img {
+  display: block;
+  height: 32px;
+  object-fit: contain;
+  width: auto;
+}
+
 .education-credential {
   align-self: flex-start;
   background: var(--lime);
@@ -588,7 +614,7 @@ h2 em {
   font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.04em;
-  margin-top: 28px;
+  margin-top: 0;
   padding: 9px 13px;
   text-transform: uppercase;
 }
