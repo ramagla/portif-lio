@@ -223,15 +223,31 @@ export const education: EducationItem[] = [
   }
 ]
 
-export const projects = [
+export type ProjectItem = {
+  title: string
+  eyebrow: string
+  description: string
+  tags: string[]
+  image: string
+  deliverables: string[]
+  href?: string
+  liveUrl?: string
+  imageFit?: 'cover' | 'contain'
+  availability?: string
+}
+
+export const projects: ProjectItem[] = [
   {
     title: 'Portal de Gestão',
     eyebrow: 'Produto corporativo',
     description:
       'Portal operacional que centraliza indicadores, rotinas de DP e módulos internos em uma experiência única, segura e instalável.',
     tags: ['Python', 'Django', 'PostgreSQL', 'Oracle', 'Redis', 'AWS', 'APIs'],
-    href: 'https://github.com/ramagla/Projeto_BI',
-    image: '/projects/portal-gestao.webp'
+    image: '/projects/portal-gestao.webp',
+    deliverables: [
+      'Indicadores e rotinas corporativas centralizados',
+      'Integrações entre aplicações, bancos de dados e infraestrutura'
+    ]
   },
   {
     title: 'SIB',
@@ -239,9 +255,13 @@ export const projects = [
     description:
       'Projeto institucional com foco em clareza de marca, jornada de contato e experiência responsiva.',
     tags: ['React', 'UX/UI', 'Responsivo'],
-    href: 'https://github.com/ramagla/landpage_sib',
     image: '/projects/sib-logo.webp',
-    imageFit: 'contain' as const
+    imageFit: 'contain',
+    deliverables: [
+      'Apresentação institucional adaptada a diferentes telas',
+      'Jornada direta para informações e contato'
+    ],
+    availability: 'Detalhes técnicos sob consulta'
   },
   {
     title: 'Romeu Beauty',
@@ -251,7 +271,11 @@ export const projects = [
     tags: ['React', 'Vite', 'SEO'],
     href: 'https://github.com/ramagla/landpage_romeu',
     liveUrl: 'https://www.romeuferrazin.com.br',
-    image: '/projects/romeu-beauty.webp'
+    image: '/projects/romeu-beauty.webp',
+    deliverables: [
+      'Serviços e portfólio organizados para descoberta',
+      'SEO técnico e caminhos de conversão para contato'
+    ]
   },
   {
     title: 'Duda 16',
@@ -259,8 +283,12 @@ export const projects = [
     description:
       'Convite digital com RSVP, mensagens, check-in e painel administrativo.',
     tags: ['React', 'APIs', 'SQLite', 'Vercel'],
-    href: 'https://github.com/ramagla/landpage_duda',
     liveUrl: 'https://www.dudanoibiza.com.br',
-    image: '/projects/duda-16.webp'
+    image: '/projects/duda-16.webp',
+    deliverables: [
+      'Confirmação de presença e mensagens integradas',
+      'Painel administrativo e fluxo de check-in'
+    ],
+    availability: 'Código não divulgado por privacidade'
   }
 ]

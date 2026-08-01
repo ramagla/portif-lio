@@ -119,6 +119,9 @@ function App() {
   return (
     <>
       <Analytics />
+      <a className="skip-link" href="#conteudo">
+        Ir para o conteúdo principal
+      </a>
       <header className="site-header">
         <a href="#inicio" aria-label="Rafael Almeida — início">
           <Brand />
@@ -181,7 +184,7 @@ function App() {
         </details>
       </header>
 
-      <main>
+      <main id="conteudo">
         <section className="hero section" id="inicio">
           <div className="hero-shape hero-shape--one" aria-hidden="true" />
           <div className="hero-shape hero-shape--two" aria-hidden="true" />
@@ -232,6 +235,8 @@ function App() {
                 alt="Rafael Almeida, Coordenador de TI"
                 width="420"
                 height="525"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
             <div className="hero-card-caption">
@@ -513,14 +518,28 @@ function App() {
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
-                <a
-                  className="text-link"
-                  href={projects[0].href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <ul
+                  className="project-deliverables"
+                  aria-label={`Entregas do projeto ${projects[0].title}`}
                 >
-                  Ver código do projeto <ExternalIcon />
-                </a>
+                  {projects[0].deliverables.map((deliverable) => (
+                    <li key={deliverable}>{deliverable}</li>
+                  ))}
+                </ul>
+                {projects[0].href ? (
+                  <a
+                    className="text-link"
+                    href={projects[0].href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver código do projeto <ExternalIcon />
+                  </a>
+                ) : (
+                  <a className="text-link" href="#contato">
+                    Conversar sobre este case <FaEnvelope />
+                  </a>
+                )}
               </div>
             </article>
             <div className="secondary-projects">
@@ -540,15 +559,25 @@ function App() {
                         <span key={tag}>{tag}</span>
                       ))}
                     </div>
+                    <ul
+                      className="project-deliverables"
+                      aria-label={`Entregas do projeto ${project.title}`}
+                    >
+                      {project.deliverables.map((deliverable) => (
+                        <li key={deliverable}>{deliverable}</li>
+                      ))}
+                    </ul>
                   </div>
                   <div className="secondary-project-links">
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Código <FaGithub />
-                    </a>
+                    {project.href && (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Código <FaGithub />
+                      </a>
+                    )}
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
@@ -557,6 +586,11 @@ function App() {
                       >
                         Visitar <ExternalIcon />
                       </a>
+                    )}
+                    {project.availability && (
+                      <span className="project-availability">
+                        {project.availability}
+                      </span>
                     )}
                   </div>
                 </article>
