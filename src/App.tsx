@@ -393,11 +393,25 @@ function App() {
                   )}
                 </div>
 
-                {item.credential && (
+                {(item.logo || item.credential) && (
                   <div className="education-meta">
-                    <span className="education-credential">
-                      {item.credential}
-                    </span>
+                    {item.logo && (
+                      <div className="education-brand">
+                        <img
+                          src={item.logo}
+                          alt={item.logoAlt ?? ''}
+                          width="120"
+                          height="48"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+
+                    {item.credential && (
+                      <span className="education-credential">
+                        {item.credential}
+                      </span>
+                    )}
                   </div>
                 )}
               </article>

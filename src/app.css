@@ -989,7 +989,7 @@ h2 em {
 .whatsapp-float:hover {
   transform: translateY(-4px);
 }
-\n\n\n\n\n\n @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
@@ -1118,20 +1118,8 @@ a {
    ---------------------------------------------------------- */
 
 @media (max-width: 1100px) {
-  .highlights {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .technology-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .featured-project-copy {
     padding: 30px;
-  }
-
-  .contact {
-    padding: 68px 60px;
   }
 
   .highlights {
@@ -1616,6 +1604,12 @@ a {
     right: 14px;
     bottom: calc(14px + env(safe-area-inset-bottom));
   }
+
+  .button,
+  .mobile-menu summary,
+  .mobile-menu nav a {
+    min-height: 44px;
+  }
 }
 
 /* ----------------------------------------------------------
@@ -1740,18 +1734,6 @@ a {
 
   .hero-shape {
     display: none;
-  }
-}
-
-/* ----------------------------------------------------------
-   ZOOM / ACESSIBILIDADE
-   ---------------------------------------------------------- */
-
-@media (max-width: 600px) {
-  .button,
-  .mobile-menu summary,
-  .mobile-menu nav a {
-    min-height: 44px;
   }
 }
 
