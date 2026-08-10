@@ -73,9 +73,12 @@ function Brand() {
   return (
     <span className="brand-lockup">
       <img src="/brand/ra-monogram-512.png" alt="" width="40" height="40" />
-      <span>
+      <span className="brand-lockup__identity">
         Rafael
         <strong>Almeida</strong>
+      </span>
+      <span className="mimo-mark" aria-label="mimo">
+        mimo<span>.</span>
       </span>
     </span>
   )

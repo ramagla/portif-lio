@@ -299,6 +299,7 @@ export const projects: ProjectItem[] = [
       'Plataforma de rifa solidária com escolha de números, reservas, pagamento via PIX e painel de administração.',
     tags: ['React', 'Vite', 'Node.js', 'Turso', 'PIX'],
     href: 'https://github.com/ramagla/rifa-malu',
+    liveUrl: 'https://rifa-malu.vercel.app/',
     image: '/projects/rifa-malu.png',
     deliverables: [
       'Reserva de números e confirmação de pagamento via PIX',

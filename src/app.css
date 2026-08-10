@@ -80,7 +80,7 @@ img {
   border-radius: 11px;
   object-fit: cover;
 }
-.brand-lockup > span {
+.brand-lockup__identity {
   display: flex;
   flex-direction: column;
   font-family: 'Manrope', sans-serif;
@@ -91,6 +91,22 @@ img {
 }
 .brand-lockup strong {
   font-size: 0.79rem;
+}
+.mimo-mark {
+  align-items: baseline;
+  border-left: 1px solid var(--line);
+  color: var(--ink);
+  display: inline-flex;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 1;
+  margin-left: 2px;
+  padding-left: 12px;
+}
+.mimo-mark span {
+  color: var(--accent);
 }
 .site-header nav {
   display: flex;
