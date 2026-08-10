@@ -844,6 +844,199 @@ h2 em {
 .text-link svg {
   font-size: 0.7rem;
 }
+.featured-project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.featured-project-actions .text-link {
+  margin-top: 27px;
+}
+.portal-360 {
+  margin-top: 20px;
+  padding: clamp(28px, 4vw, 48px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 19px;
+  background: radial-gradient(
+      circle at 26% 50%,
+      rgba(105, 214, 196, 0.12),
+      transparent 31%
+    ),
+    linear-gradient(135deg, #102e25, #0a1d17);
+}
+.portal-360-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+}
+.portal-360 .eyebrow {
+  color: var(--aqua);
+}
+.portal-360 h3 {
+  margin-top: 8px;
+  font-size: clamp(1.75rem, 3vw, 2.65rem);
+  letter-spacing: -0.055em;
+}
+.portal-360-heading > p {
+  max-width: 360px;
+  color: #b8c9c1;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+.portal-360-layout {
+  display: grid;
+  grid-template-columns: minmax(470px, 1.25fr) minmax(260px, 0.75fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 70px);
+  margin-top: 28px;
+}
+.portal-360-orbit {
+  position: relative;
+  width: min(100%, 530px);
+  height: 470px;
+  margin-inline: auto;
+}
+.portal-360-orbit::before,
+.portal-360-orbit::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(105, 214, 196, 0.36);
+  border-radius: 50%;
+  content: '';
+  transform: translate(-50%, -50%);
+}
+.portal-360-orbit::before {
+  width: 310px;
+  height: 310px;
+}
+.portal-360-orbit::after {
+  width: 420px;
+  height: 420px;
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.portal-360-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: grid;
+  width: 172px;
+  height: 172px;
+  place-content: center;
+  border: 1px solid rgba(214, 242, 106, 0.7);
+  border-radius: 50%;
+  background: #0d251d;
+  box-shadow: 0 0 0 15px rgba(105, 214, 196, 0.05);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.portal-360-core span,
+.portal-360-core small {
+  color: #b8c9c1;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.portal-360-core strong {
+  color: #fff;
+  font-size: 1.6rem;
+  letter-spacing: -0.06em;
+}
+.portal-360-core small {
+  margin-top: 9px;
+  color: var(--aqua);
+  font-size: 0.57rem;
+}
+.portal-module {
+  --module-distance: 208px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  max-width: 122px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: #173b30;
+  color: #eff5f0;
+  cursor: pointer;
+  font:
+    800 0.64rem/1.2 'DM Sans',
+    sans-serif;
+  text-align: center;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+  transform: translate(-50%, -50%) rotate(var(--module-angle))
+    translateX(var(--module-distance)) rotate(calc(var(--module-angle) * -1));
+}
+.portal-module:hover,
+.portal-module:focus-visible,
+.portal-module.is-active {
+  border-color: var(--lime);
+  background: var(--lime);
+  color: var(--ink);
+  outline: none;
+}
+.portal-module--future {
+  border-style: dashed;
+  color: #d6f26a;
+}
+.portal-module--future:hover,
+.portal-module--future:focus-visible,
+.portal-module--future.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.portal-module-detail {
+  padding: 29px;
+  border: 1px solid rgba(105, 214, 196, 0.38);
+  border-radius: 16px;
+  background: rgba(6, 22, 17, 0.58);
+}
+.portal-module-detail > span {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgba(105, 214, 196, 0.14);
+  color: var(--aqua);
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.portal-module-detail h4 {
+  margin-top: 16px;
+  font-size: 1.55rem;
+  letter-spacing: -0.05em;
+}
+.portal-module-detail p {
+  margin-top: 12px;
+  color: #c5d1cb;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.portal-module-detail small {
+  display: block;
+  margin-top: 21px;
+  color: #b8c9c1;
+  font-size: 0.72rem;
+}
+.portal-module-detail--future {
+  border-color: rgba(255, 93, 67, 0.7);
+}
+.portal-module-detail--future > span {
+  background: rgba(255, 93, 67, 0.16);
+  color: #ff9f8e;
+}
 .project-visual {
   min-height: 225px;
   overflow: hidden;

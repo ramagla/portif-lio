@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import {
   FaArrowDown,
@@ -69,6 +69,125 @@ const experienceAreas = [
   }
 ]
 
+type PortalModule = {
+  id: string
+  name: string
+  shortName: string
+  description: string
+  status: 'Disponível' | 'Em desenvolvimento'
+}
+
+const portalModules: PortalModule[] = [
+  {
+    id: 'indicadores',
+    name: 'Central de Indicadores',
+    shortName: 'Indicadores',
+    description:
+      'Consolida indicadores e informações-chave para acompanhamento da operação.',
+    status: 'Disponível'
+  },
+  {
+    id: 'ti',
+    name: 'Tecnologia da Informação',
+    shortName: 'TI',
+    description:
+      'Centraliza serviços, rotinas e informações da área de tecnologia.',
+    status: 'Disponível'
+  },
+  {
+    id: 'prv',
+    name: 'Apuração PRV',
+    shortName: 'PRV',
+    description:
+      'Apoia a apuração e o acompanhamento das variáveis do processo PRV.',
+    status: 'Disponível'
+  },
+  {
+    id: 'dprh',
+    name: 'Gestão DP/RH',
+    shortName: 'DP/RH',
+    description:
+      'Reúne rotinas e controles ligados ao departamento pessoal e recursos humanos.',
+    status: 'Disponível'
+  },
+  {
+    id: 'transportadas',
+    name: 'Gestão de Transportadas',
+    shortName: 'Transportadas',
+    description:
+      'Organiza informações e processos relacionados às operações transportadas.',
+    status: 'Disponível'
+  },
+  {
+    id: 'demandas',
+    name: 'Gestão de Demandas',
+    shortName: 'Demandas',
+    description: 'Registra, prioriza e acompanha solicitações entre as áreas.',
+    status: 'Disponível'
+  },
+  {
+    id: 'parametros',
+    name: 'Parâmetros e frequência',
+    shortName: 'Parâmetros',
+    description:
+      'Mantém parâmetros operacionais e a frequência das rotinas do portal.',
+    status: 'Disponível'
+  },
+  {
+    id: 'conexoes',
+    name: 'Dados de conexão',
+    shortName: 'Conexões',
+    description:
+      'Documenta e organiza os dados necessários para as integrações.',
+    status: 'Disponível'
+  },
+  {
+    id: 'tabelas',
+    name: 'Documentação de tabelas',
+    shortName: 'Tabelas',
+    description:
+      'Centraliza a referência das estruturas e tabelas utilizadas pelo sistema.',
+    status: 'Disponível'
+  },
+  {
+    id: 'permissoes',
+    name: 'Permissões',
+    shortName: 'Permissões',
+    description: 'Controla os acessos por usuário, grupo e perfil de atuação.',
+    status: 'Disponível'
+  },
+  {
+    id: 'alertas',
+    name: 'Alertas de e-mail',
+    shortName: 'Alertas',
+    description: 'Configura e acompanha comunicações automáticas por e-mail.',
+    status: 'Disponível'
+  },
+  {
+    id: 'usuarios',
+    name: 'Usuários ativos',
+    shortName: 'Usuários',
+    description: 'Apoia o acompanhamento dos usuários com acesso ao portal.',
+    status: 'Disponível'
+  },
+  {
+    id: 'versoes',
+    name: 'Versões do sistema',
+    shortName: 'Versões',
+    description:
+      'Mantém o histórico e as informações das versões disponibilizadas.',
+    status: 'Disponível'
+  },
+  {
+    id: 'orcamentos',
+    name: 'Orçamentos',
+    shortName: 'Orçamentos',
+    description:
+      'Módulo planejado para estruturar o ciclo de orçamento e seus acompanhamentos.',
+    status: 'Em desenvolvimento'
+  }
+]
+
 function Brand() {
   return (
     <span className="brand-lockup">
@@ -86,6 +205,82 @@ function Brand() {
 
 function ExternalIcon() {
   return <FaArrowUpRightFromSquare aria-hidden="true" />
+}
+
+function Portal360() {
+  const [activeModuleId, setActiveModuleId] = useState('indicadores')
+  const activeModule =
+    portalModules.find(({ id }) => id === activeModuleId) ?? portalModules[0]
+
+  return (
+    <section
+      className="portal-360"
+      id="visao-360"
+      aria-labelledby="visao-360-title"
+    >
+      <div className="portal-360-heading">
+        <div>
+          <p className="eyebrow">
+            <span />
+            Visão 360
+          </p>
+          <h3 id="visao-360-title">Ecossistema do Portal de Gestão</h3>
+        </div>
+        <p>
+          Explore os módulos. Ao passar o mouse ou usar o teclado, veja o
+          propósito de cada frente.
+        </p>
+      </div>
+      <div className="portal-360-layout">
+        <div
+          className="portal-360-orbit"
+          aria-label="Módulos do Portal de Gestão"
+        >
+          <div className="portal-360-core">
+            <span>Portal de</span>
+            <strong>Gestão</strong>
+            <small>
+              {
+                portalModules.filter(({ status }) => status === 'Disponível')
+                  .length
+              }{' '}
+              módulos ativos
+            </small>
+          </div>
+          {portalModules.map((module, index) => (
+            <button
+              className={`portal-module ${module.status === 'Em desenvolvimento' ? 'portal-module--future' : ''} ${activeModule.id === module.id ? 'is-active' : ''}`}
+              key={module.id}
+              type="button"
+              style={
+                {
+                  '--module-angle': `${index * (360 / portalModules.length)}deg`
+                } as CSSProperties
+              }
+              onMouseEnter={() => setActiveModuleId(module.id)}
+              onFocus={() => setActiveModuleId(module.id)}
+              onClick={() => setActiveModuleId(module.id)}
+              aria-pressed={activeModule.id === module.id}
+            >
+              {module.shortName}
+            </button>
+          ))}
+        </div>
+        <article
+          className={`portal-module-detail ${activeModule.status === 'Em desenvolvimento' ? 'portal-module-detail--future' : ''}`}
+        >
+          <span>{activeModule.status}</span>
+          <h4>{activeModule.name}</h4>
+          <p>{activeModule.description}</p>
+          <small>
+            {activeModule.status === 'Disponível'
+              ? 'Módulo atual do Portal de Gestão.'
+              : 'Frente prevista para a evolução do produto.'}
+          </small>
+        </article>
+      </div>
+    </section>
+  )
 }
 
 function ProjectVisual({
@@ -529,31 +724,37 @@ function App() {
                     <li key={deliverable}>{deliverable}</li>
                   ))}
                 </ul>
-                {projects[0].href ? (
-                  <a
-                    className="text-link"
-                    href={projects[0].href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Ver código do projeto <ExternalIcon />
+                <div className="featured-project-actions">
+                  {projects[0].href ? (
+                    <a
+                      className="text-link"
+                      href={projects[0].href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Ver código do projeto <ExternalIcon />
+                    </a>
+                  ) : projects[0].liveUrl ? (
+                    <a
+                      className="text-link"
+                      href={projects[0].liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visitar portal <ExternalIcon />
+                    </a>
+                  ) : (
+                    <a className="text-link" href="#contato">
+                      Conversar sobre este case <FaEnvelope />
+                    </a>
+                  )}
+                  <a className="text-link" href="#visao-360">
+                    Visão 360 <ExternalIcon />
                   </a>
-                ) : projects[0].liveUrl ? (
-                  <a
-                    className="text-link"
-                    href={projects[0].liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visitar portal <ExternalIcon />
-                  </a>
-                ) : (
-                  <a className="text-link" href="#contato">
-                    Conversar sobre este case <FaEnvelope />
-                  </a>
-                )}
+                </div>
               </div>
             </article>
+            <Portal360 />
             <div className="secondary-projects">
               {projects.slice(1).map((project) => (
                 <article className="secondary-project" key={project.title}>
