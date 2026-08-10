@@ -535,6 +535,15 @@ function App() {
                   >
                     Ver código do projeto <ExternalIcon />
                   </a>
+                ) : projects[0].liveUrl ? (
+                  <a
+                    className="text-link"
+                    href={projects[0].liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visitar portal <ExternalIcon />
+                  </a>
                 ) : (
                   <a className="text-link" href="#contato">
                     Conversar sobre este case <FaEnvelope />

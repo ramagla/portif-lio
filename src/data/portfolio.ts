@@ -244,6 +244,7 @@ export const projects: ProjectItem[] = [
       'Portal operacional que centraliza indicadores, rotinas de DP e módulos internos em uma experiência única, segura e instalável.',
     tags: ['Python', 'Django', 'PostgreSQL', 'Oracle', 'Redis', 'AWS', 'APIs'],
     image: '/projects/portal-gestao.webp',
+    liveUrl: 'https://portal.apoioadministrativo.net.br/',
     deliverables: [
       'Indicadores e rotinas corporativas centralizados',
       'Integrações entre aplicações, bancos de dados e infraestrutura'
@@ -290,5 +291,18 @@ export const projects: ProjectItem[] = [
       'Painel administrativo e fluxo de check-in'
     ],
     availability: 'Código não divulgado por privacidade'
+  },
+  {
+    title: 'Rifa da Malu',
+    eyebrow: 'Plataforma transacional',
+    description:
+      'Plataforma de rifa solidária com escolha de números, reservas, pagamento via PIX e painel de administração.',
+    tags: ['React', 'Vite', 'Node.js', 'Turso', 'PIX'],
+    href: 'https://github.com/ramagla/rifa-malu',
+    image: '/projects/rifa-malu.png',
+    deliverables: [
+      'Reserva de números e confirmação de pagamento via PIX',
+      'Painel para acompanhar vendas, participantes e o sorteio'
+    ]
   }
 ]

@@ -16,6 +16,7 @@ Apresentar uma trajetória de mais de 18 anos em Tecnologia da Informação e de
 - **SIB:** presença institucional responsiva com jornada direta de informação e contato.
 - **Romeu Beauty:** experiência digital com serviços, portfólio, SEO e conversão.
 - **Duda 16:** produto para evento com RSVP, mensagens, check-in e administração.
+- **Rifa da Malu:** plataforma de rifa solidária com seleção de números, reservas, PIX e painel administrativo.
 
 Repositórios corporativos ou que envolvem dados pessoais não são expostos pelo portfólio. Os detalhes técnicos podem ser apresentados em uma conversa profissional.
 
