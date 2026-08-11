@@ -83,7 +83,7 @@ const portalModules: PortalModule[] = [
     name: 'Central de Indicadores',
     shortName: 'Indicadores',
     description:
-      'Consolida indicadores e informações-chave para acompanhamento da operação.',
+      'Substitui relatórios dispersos em Power BI e Tableau, consolidando indicadores, dados e análises em um único portal corporativo.',
     status: 'Disponível'
   },
   {
@@ -91,15 +91,15 @@ const portalModules: PortalModule[] = [
     name: 'Tecnologia da Informação',
     shortName: 'TI',
     description:
-      'Centraliza serviços, rotinas e informações da área de tecnologia.',
-    status: 'Disponível'
+      'Central de gestão de TI orientada por ITIL, em desenvolvimento com referência nos principais recursos do GLPI para organizar serviços, ativos e atendimento.',
+    status: 'Em desenvolvimento'
   },
   {
     id: 'prv',
     name: 'Apuração PRV',
     shortName: 'PRV',
     description:
-      'Apoia a apuração e o acompanhamento das variáveis do processo PRV.',
+      'Estrutura a apuração do Programa de Remuneração Variável, reunindo regras, indicadores e acompanhamento para dar transparência ao cálculo.',
     status: 'Disponível'
   },
   {
@@ -107,7 +107,7 @@ const portalModules: PortalModule[] = [
     name: 'Gestão DP/RH',
     shortName: 'DP/RH',
     description:
-      'Reúne rotinas e controles ligados ao departamento pessoal e recursos humanos.',
+      'Integra Tangerino e TOTVS para apoiar campanhas, programas de assiduidade e uma visão 360 dos colaboradores nas rotinas de DP e RH.',
     status: 'Disponível'
   },
   {
@@ -115,7 +115,7 @@ const portalModules: PortalModule[] = [
     name: 'Gestão de Transportadas',
     shortName: 'Transportadas',
     description:
-      'Organiza informações e processos relacionados às operações transportadas.',
+      'Gerencia a operação de comidas transportadas e oferece um painel do cliente com visão de pedidos, serviços e acompanhamento da operação.',
     status: 'Disponível'
   },
   {
@@ -130,23 +130,7 @@ const portalModules: PortalModule[] = [
     name: 'Parâmetros e frequência',
     shortName: 'Parâmetros',
     description:
-      'Mantém parâmetros operacionais e a frequência das rotinas do portal.',
-    status: 'Disponível'
-  },
-  {
-    id: 'conexoes',
-    name: 'Dados de conexão',
-    shortName: 'Conexões',
-    description:
-      'Documenta e organiza os dados necessários para as integrações.',
-    status: 'Disponível'
-  },
-  {
-    id: 'tabelas',
-    name: 'Documentação de tabelas',
-    shortName: 'Tabelas',
-    description:
-      'Centraliza a referência das estruturas e tabelas utilizadas pelo sistema.',
+      'Orquestrador de cargas do portal: define parâmetros, frequência e execução das rotinas que alimentam os módulos e indicadores.',
     status: 'Disponível'
   },
   {
@@ -158,16 +142,18 @@ const portalModules: PortalModule[] = [
   },
   {
     id: 'alertas',
-    name: 'Alertas de e-mail',
-    shortName: 'Alertas',
-    description: 'Configura e acompanha comunicações automáticas por e-mail.',
+    name: 'Alertas e notificações',
+    shortName: 'Notificações',
+    description:
+      'Centraliza notificações operacionais por e-mail e Teams, com integração via WhatsApp prevista para as próximas evoluções.',
     status: 'Disponível'
   },
   {
-    id: 'usuarios',
-    name: 'Usuários ativos',
-    shortName: 'Usuários',
-    description: 'Apoia o acompanhamento dos usuários com acesso ao portal.',
+    id: 'integracoes',
+    name: 'Integrações',
+    shortName: 'Integrações',
+    description:
+      'Responsável por conectar o Portal de Gestão a diversos sistemas, centralizando fluxos, dados e automações entre as plataformas.',
     status: 'Disponível'
   },
   {
@@ -207,79 +193,98 @@ function ExternalIcon() {
   return <FaArrowUpRightFromSquare aria-hidden="true" />
 }
 
-function Portal360() {
+function Portal360({ onClose }: { onClose: () => void }) {
   const [activeModuleId, setActiveModuleId] = useState('indicadores')
   const activeModule =
     portalModules.find(({ id }) => id === activeModuleId) ?? portalModules[0]
 
   return (
-    <section
-      className="portal-360"
-      id="visao-360"
-      aria-labelledby="visao-360-title"
+    <div
+      className="portal-360-backdrop"
+      role="presentation"
+      onMouseDown={onClose}
     >
-      <div className="portal-360-heading">
-        <div>
-          <p className="eyebrow">
-            <span />
-            Visão 360
-          </p>
-          <h3 id="visao-360-title">Ecossistema do Portal de Gestão</h3>
-        </div>
-        <p>
-          Explore os módulos. Ao passar o mouse ou usar o teclado, veja o
-          propósito de cada frente.
-        </p>
-      </div>
-      <div className="portal-360-layout">
-        <div
-          className="portal-360-orbit"
-          aria-label="Módulos do Portal de Gestão"
+      <section
+        className="portal-360"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="visao-360-title"
+        onMouseDown={(event) => event.stopPropagation()}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') onClose()
+        }}
+      >
+        <button
+          className="portal-360-close"
+          type="button"
+          onClick={onClose}
+          autoFocus
         >
-          <div className="portal-360-core">
-            <span>Portal de</span>
-            <strong>Gestão</strong>
-            <small>
-              {
-                portalModules.filter(({ status }) => status === 'Disponível')
-                  .length
-              }{' '}
-              módulos ativos
-            </small>
+          Fechar <span aria-hidden="true">×</span>
+        </button>
+        <div className="portal-360-heading">
+          <div>
+            <p className="eyebrow">
+              <span />
+              Visão 360
+            </p>
+            <h3 id="visao-360-title">Ecossistema do Portal de Gestão</h3>
           </div>
-          {portalModules.map((module, index) => (
-            <button
-              className={`portal-module ${module.status === 'Em desenvolvimento' ? 'portal-module--future' : ''} ${activeModule.id === module.id ? 'is-active' : ''}`}
-              key={module.id}
-              type="button"
-              style={
-                {
-                  '--module-angle': `${index * (360 / portalModules.length)}deg`
-                } as CSSProperties
-              }
-              onMouseEnter={() => setActiveModuleId(module.id)}
-              onFocus={() => setActiveModuleId(module.id)}
-              onClick={() => setActiveModuleId(module.id)}
-              aria-pressed={activeModule.id === module.id}
-            >
-              {module.shortName}
-            </button>
-          ))}
+          <p>
+            Explore os módulos. Ao passar o mouse ou usar o teclado, veja o
+            propósito de cada frente.
+          </p>
         </div>
-        <article
-          className={`portal-module-detail ${activeModule.status === 'Em desenvolvimento' ? 'portal-module-detail--future' : ''}`}
-        >
-          <span>{activeModule.status}</span>
-          <h4>{activeModule.name}</h4>
-          <p>{activeModule.description}</p>
-          <small>
-            {activeModule.status === 'Disponível'
-              ? 'Módulo atual do Portal de Gestão.'
-              : 'Frente prevista para a evolução do produto.'}
-          </small>
-        </article>
-      </div>
-    </section>
+        <div className="portal-360-layout">
+          <div
+            className="portal-360-orbit"
+            aria-label="Módulos do Portal de Gestão"
+          >
+            <div className="portal-360-core">
+              <span>Portal de</span>
+              <strong>Gestão</strong>
+              <small>
+                {
+                  portalModules.filter(({ status }) => status === 'Disponível')
+                    .length
+                }{' '}
+                módulos ativos
+              </small>
+            </div>
+            {portalModules.map((module, index) => (
+              <button
+                className={`portal-module ${module.status === 'Em desenvolvimento' ? 'portal-module--future' : ''} ${activeModule.id === module.id ? 'is-active' : ''}`}
+                key={module.id}
+                type="button"
+                style={
+                  {
+                    '--module-angle': `${index * (360 / portalModules.length)}deg`
+                  } as CSSProperties
+                }
+                onMouseEnter={() => setActiveModuleId(module.id)}
+                onFocus={() => setActiveModuleId(module.id)}
+                onClick={() => setActiveModuleId(module.id)}
+                aria-pressed={activeModule.id === module.id}
+              >
+                {module.shortName}
+              </button>
+            ))}
+          </div>
+          <article
+            className={`portal-module-detail ${activeModule.status === 'Em desenvolvimento' ? 'portal-module-detail--future' : ''}`}
+          >
+            <span>{activeModule.status}</span>
+            <h4>{activeModule.name}</h4>
+            <p>{activeModule.description}</p>
+            <small>
+              {activeModule.status === 'Disponível'
+                ? 'Módulo atual do Portal de Gestão.'
+                : 'Frente prevista para a evolução do produto.'}
+            </small>
+          </article>
+        </div>
+      </section>
+    </div>
   )
 }
 
@@ -313,6 +318,7 @@ function ProjectVisual({
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [portal360Open, setPortal360Open] = useState(false)
 
   return (
     <>
@@ -748,13 +754,19 @@ function App() {
                       Conversar sobre este case <FaEnvelope />
                     </a>
                   )}
-                  <a className="text-link" href="#visao-360">
-                    Visão 360 <ExternalIcon />
-                  </a>
+                  <button
+                    className="text-link text-link--button"
+                    type="button"
+                    onClick={() => setPortal360Open(true)}
+                  >
+                    Visão 360 <FaDiagramProject />
+                  </button>
                 </div>
               </div>
             </article>
-            <Portal360 />
+            {portal360Open && (
+              <Portal360 onClose={() => setPortal360Open(false)} />
+            )}
             <div className="secondary-projects">
               {projects.slice(1).map((project) => (
                 <article className="secondary-project" key={project.title}>
